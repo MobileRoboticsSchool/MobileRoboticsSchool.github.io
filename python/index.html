@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>3 Building - Mobile Robotics with micro:bit</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "3 Building";
+    var mkdocs_page_input_path = "python.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Mobile Robotics with micro:bit</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Introduction</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="./">0 Python Tutorial</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="./">1 Micro:bit</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="./">2 GPIO</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="./">3 Moving</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">3 Building</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#comments-and-simple-instructions">Comments and simple instructions</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#variables-and-standard-operations">Variables and standard operations</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#loops">Loops</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#functions">Functions</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#conditions">Conditions</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#conclusion">Conclusion</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../about/">Contact</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Mobile Robotics with micro:bit</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>3 Building</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="python-introduction">Python introduction</h1>
+<p>During the upcoming robotics summerschool, I'll need you to be confortable with the basics of python programming. I wrote this page using embedded codes to have everyone starting with the bare minimum going from a simple "Hello world" script to using variables, loops, conditions and functions. As the program of the summerschool will be intense, I'll need most of you to be confortable with those.</p>
+<h2 id="comments-and-simple-instructions">Comments and simple instructions</h2>
+<p>For each section of this page I'll use embedded code that allow you to run python scripts without leaving this page, and interact with the code as you wish. So let's go: read the code, try to predict what's going to happen in the terminal (in black), and press the pay button.</p>
+<iframe height="800px" width="100%" src="https://repl.it/@amauryd/MobileRoboticsSummerschool1Hello?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
+<p>Again, don't hesitate to change the code and press play again to try things out, anything ! For that you can also directly type instructions in the terminal (the black window).</p>
+<h2 id="variables-and-standard-operations">Variables and standard operations</h2>
+<p>Computers are so useful to us because they don't always to the same things over and over. It's the same with mobile robots, they can adapt to their environment. This would be impossible to do without taking into account some variations in our programs. To deal with those variations, we use what we call variables. A variable is like a box where we put some information that can vary during the execution of a program.</p>
+<iframe height="800px" width="100%" src="https://repl.it/@amauryd/MobileRoboticsSummerschool2Variables?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
+<p>Same here, change the code, make it crash ! (Even more than it already does !)</p>
+<h2 id="loops">Loops</h2>
+<p>Another way computers and robots change our lives is in their ability to cope with repetitive task without being bored. But the programmer who programmed them gets easily bored, so he needs to have a tool to take care of repetitions in is code. That's what loops are for.</p>
+<iframe height="800px" width="100%" src="https://repl.it/@amauryd/MobileRoboticsSummerschool3Loops?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
+<div class="admonition note">
+<p class="admonition-title">Exercice 1</p>
+<p>Add some lines in the script above to display the 20 first numbers of the Fibonacci sequence.</p>
+</div>
+<details class="note"><summary>Solution exercice 1</summary><p><img alt="Fibonacci" src="Fibonacci.png" /></p>
+</details>
+<h2 id="functions">Functions</h2>
+<p>Do you know what assembly language is ? Take a few seconds to have a look at it on wikipedia and try to decipher what the program in the top right image does... That's not the language you want to program in every day ! Take some time to contemplate the chance you have to not go through that and instead use python.</p>
+<p>Well, you have this chance partly thanks to functions. As in mathematics, functions can take arguments and return a value. You should have all by now used the cosine function. Cosine takes onoe parameter, an angle, and returns a value in between -1 and 1. In computer science, functions come in many forms. They can take argumet(s) or not. They can return values but they don't have to (in this case we could call it a procedure). </p>
+<p>Such a tool allow to make our code readable, less repetitive, and combine and build functions with and on one another. That's how, thanks to programmers, your computer can understand some high level langage like python, while at its core it can only understand assembly. Let's see how to use this incredible tool on python. </p>
+<iframe height="800px" width="100%" src="https://repl.it/@amauryd/MobileRoboticsSummerschool4functions?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
+<div class="admonition note">
+<p class="admonition-title">Exercice 2</p>
+<p>Define a function with one parameter n that compute and return the golden ratio using the fibonacci <em>n</em>th and <em>n+1</em>th numbers.</p>
+</div>
+<details class="note"><summary>Solution exercice 2</summary><p><img alt="GoldenRationSol" src="GoldenRatio.png" />
+See how simple the exercise is if we use the predefined fibonacci function. The exercise would have been much harder if we had to start from scratch. </p>
+</details>
+<h2 id="conditions">Conditions</h2>
+<p>In our programs, depending on some variables, sometimes we want to do things, sometimes we don't. To perform such a feat the last ingredient we are missing in our arsenal of tools are conditions. Conditions are quite simple and we use them everyday: Does it rain ? Yes/No =&gt; Take an umbrella/Don't. Note that in computer science, conditions are made of: a test resulting in a boolean (True or False), what to do if the test is True, and sometimes what to do if it is not.</p>
+<div class="admonition note">
+<p class="admonition-title">Exercice 3</p>
+<p>Modify the code following the instructions inside it.</p>
+</div>
+<iframe height="800px" width="100%" src="https://repl.it/@amauryd/UnfortunateEnchantingLicensing?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
+<details class="note"><summary>Solution exercice 3</summary><p><img alt="ConditionFig" src="Condition.png" /></p>
+</details>
+<h2 id="conclusion">Conclusion</h2>
+<p>That's all for now. Thanks for going through this introduction and I see you soon to use those new skills of yours to discover the world of mobile robotics.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../about/" class="btn btn-neutral float-right" title="Contact">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="./" class="btn btn-neutral" title="3 Moving"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="./" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../about/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
