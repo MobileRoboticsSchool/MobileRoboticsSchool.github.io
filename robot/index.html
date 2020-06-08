@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>3 - Robotics and moving - Mobile Robotics with micro:bit</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "3 - Robotics and moving";
+    var mkdocs_page_input_path = "robot.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Mobile Robotics with micro:bit</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Welcome</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../python/">0 - Introduction to Python</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../microbit/">1 - Micro:bit board</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../gpio/">2 - Inputs and outputs</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">3 - Robotics and moving</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#building-the-bigbuggy">Building the big:buggy</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#moving-basics">Moving basics</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#control-laws">Control laws</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#conclusion-and-afternoon-program">Conclusion and afternoon program</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../mecanics/">3 - Designing and building</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../about/">Contacts</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Mobile Robotics with micro:bit</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>3 - Robotics and moving</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="mobile-robotics-control">Mobile robotics - Control</h1>
+<p>Yesterday, you learned how to make a robot sense and how to make it act on its environment. But there was a big things missing to make the robot really move: a frame, a structure to hold all the parts together, we could say the bones of our mobile robot. Today we'll solve this problem: you'll build a frame, and following you will discover some standard mobile robotics problems and learn how to solve them.</p>
+<h2 id="building-the-bigbuggy">Building the big:buggy</h2>
+<p>To build the robot, I invite you to follow the instructions provided in the Bit:Buggy isntruction manual. However this manual is missing some valuable information:</p>
+<ul>
+<li>Before starting identify the two bags that come along with the servo motors (in them there should screws and several servo horns, that is white plastic pieces to put on the servos). Those pieces won't be of any use and are not listed in the component list of the bit:buggy car, so put them aside.</li>
+<li>In step 1. pay attention to the wheels: their two sides are differents, only one side can plug onto the motor end. Also, when screwing the wheel onto the motor, hold the wheel (if you don't you could make the motor turn using the screws and that might damage the motor).</li>
+<li>In step 3. make the cables of the motors stick upward. Moreover you have to push through to really get the plastic parts completely in one another.</li>
+<li>In step 4. be delicate with the screw. You should not have to force. If it's hard to screw it in, it's probably that the alignment is ot correct. If it is, unscrew first, correct the alignment and try screwing again.</li>
+<li>Before step 6 put the batteries in if it is not yet in, and turn off the board with the switch.</li>
+<li>After step 6, when you plug the cables, remember you learned today: the black cable plugs onto G ! The picture of the instructions might be a bit misleading. By the way the cables are long (not like the picture), simply tuck them inside the robot frame and you are ready to roll.</li>
+</ul>
+<h2 id="moving-basics">Moving basics</h2>
+<p>Now that we've got some bones to hold our muscles, eyes and brain, it's time for you to remember what you learned today to do a simple program to make the buggy move.</p>
+<div class="admonition note">
+<p class="admonition-title">Exercice 1</p>
+<ul>
+<li>1.1 Program micro:bit to move forward when the robot move forward when the button A is pressed and stop when B is pressed.</li>
+<li>1.2 Rewrite your program to make it clean and reusable: define the functions <em>setLeftSpeed(v)</em> and <em>setRightSpeed(v)</em> for <em>v</em> in [-100, 100] so that to go straight at full speed we just have to call <em>setLeftSpeed(100)</em> and <em>setRightSpeed(100)</em>.</li>
+<li>1.3 Rewrite your program to make it even cleaner and reusable: define a function <em>goStraight(v)</em> that can be used to make the robot move forward (or stop) at the speed we want.</li>
+</ul>
+</div>
+<h2 id="control-laws">Control laws</h2>
+<p>Exercise: program the buggy to always follow the steepest ascent.</p>
+<p>ON/OFF control law. </p>
+<p>Proportional control law. Focus on problem decomposition: first one dimension, then second, then join them.</p>
+<h2 id="conclusion-and-afternoon-program">Conclusion and afternoon program</h2>
+<p>Remainder of lessons learned.</p>
+<p>Afternoon in autonomy (Anthony available for questions):</p>
+<ul>
+<li>First period: Everyone takes time to go through the previous exercises and identify if there has been anything left unclear. If there is discuss with the group to clarify the situation and do the corresponding exercise again if needed.</li>
+<li>Second period: Discovering the radio emettor and receptor. Final goal: control the buggy from another micro:bit by tilting it. Again focus on problem decomposition.</li>
+<li>Optional 1: Control the buggy using another micro:bit equipped with two potentiometers (remove the batteries if you do so to make sure you don't give 5V to micro:bit and burn it). One potentiometer for the forward/backward speed, the other for turning (like on many RC vehicles)</li>
+<li>Optional 2 (hard): Program the buggy to always come back to the orientation it started with. For this you'll need to use it's internal compas which is quite a special sensor.</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../mecanics/" class="btn btn-neutral float-right" title="3 - Designing and building">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../gpio/" class="btn btn-neutral" title="2 - Inputs and outputs"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../gpio/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../mecanics/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
