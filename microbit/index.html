@@ -138,7 +138,8 @@
 <p>Now you'll use the web browser to access a <a href="https://python.microbit.org/v/2.0">Python online editor for micro:bit</a>. It you go on this page you'll be facing with a big black area with some python code. This area is the editor where you'll type your programs. On top of that you should see different buttons/icons that will allow you to interact with your computer, and the micro:bit directly if you are using Chrome. </p>
 <p>For now, before doing any programming, let's see how you can put the example "Hello, World!" program onto the micro:bit.</p>
 <ul>
-<li>First option: you click the Download button. This will download the program as an <em>.hex</em> file named <em>microbit_program.hex</em>. To put it in the micro:bit, simply drag and drop the <em>.hex</em> to the MICROBIT external drive. - Second option if you have chrome: click <em>Connect</em>, select the micro:bit in the menu and click again on connect, and now the <em>Download</em> button should have transformed into a <em>Flash</em> button. This button allows you to directly put (flash) the program from the web-browser to the micro:bit. </li>
+<li>First option: you click the Download button. This will download the program as an <em>.hex</em> file named <em>microbit_program.hex</em>. To put it in the micro:bit, simply drag and drop the <em>.hex</em> to the MICROBIT external drive. </li>
+<li>Second option if you have chrome: click <em>Connect</em>, select the micro:bit in the menu and click again on connect, and now the <em>Download</em> button should have transformed into a <em>Flash</em> button. This button allows you to directly put (flash) the program from the web-browser to the micro:bit. </li>
 </ul>
 <p>At the end of both options, an orange LED should blink on the micro:bit, informing you about the transmission. When the transfer is over the program should start automatically and you should see the execution of the program on the red LEDs of the micro:bit. Congratulation, you gave your first program to the micro:bit !</p>
 <h3 id="your-first-program">Your first program</h3>
@@ -164,7 +165,7 @@ while True:
 <div class="admonition note">
 <p class="admonition-title">Exercice 1</p>
 <ul>
-<li>1.1 Work out how the functions <em>set_pixel()</em> and <em>sleep()</em> work by either by reading the doc (<a href="https://microbit-micropython.readthedocs.io/en/latest/microbit.html">sleep doc</a>, <a href="https://microbit-micropython.readthedocs.io/en/latest/display.html">display doc</a>) or by tinkering with the code... or both ! </li>
+<li>1.1 Work out how the functions <em>set_pixel()</em> and <em>sleep()</em> work either by reading the doc (<a href="https://microbit-micropython.readthedocs.io/en/latest/microbit.html">sleep doc</a>, <a href="https://microbit-micropython.readthedocs.io/en/latest/display.html">display doc</a>) or by tinkering with the code... or both ! </li>
 <li>1.2 If you tinkered with the code, you might have made mistakes. If you did not, try it out and for instance try to execute the instruction <em>display.set_pixel(-1,2,9)</em> and see what happens. Normally you should see the error "Line ... valueError index out of bounds". That's basically what will happen if you ask the micro:bit to do something it cannot do. It will tell you what's his problem (the line), and why (in this case the first argument of set_pixel can only accept values from 0 to 4).</li>
 </ul>
 </div>
@@ -176,7 +177,7 @@ while True:
 <li>2.1. Define an integer variable <em>x</em>, initialise it to 0 and display its value using <em>display.show()</em>.</li>
 <li>2.2. Program the micro:bit so that you can use the buttons A and B to increase and decrease the value of <em>x</em></li>
 <li>2.3. Instead of using <em>display.show()</em>, use a loop and the function <em>display.set_pixel()</em> to display the value of <em>x</em> for x in [0-5] on the first line of LED: if x==1, 1 LED is on, if x == 2, 2 LEDs are on... </li>
-<li>2.4. Define a function <em>displayPositiveNumber(n)</em>, that shows the value of an integer n (n in [0-25]) on the LED matrix</li>
+<li>2.4. Define a function <em>displayPositiveNumber(n)</em>, that shows the value of an integer n (n in [0-5]) on the LED matrix</li>
 </ul>
 </div>
 <p>We are going somewhere interesting with this function. If we plug some sensors to the micro:bit and we want to display some quantitative information coming from them, that's exactly the sort of function we need. However, for now, our resolution is very little (only 6 possible values can be displayed). To get a richer information, let's use the whole LED matrix. For this we'll define the following function:</p>
@@ -200,7 +201,7 @@ while True:
 When we build a robot, the main purpose is not data processing, it is to interact with the environment. For this a robot needs to perceive the environment and act upon it, and to do so it needs sensors and actuators. During the week, you'll see different types of sensors and actuators, but for now let's already see what comes integrated with the micro:bit. Sensors: buttons, accelerometer, compas, radio receiver; Actuators: led matrix, radio transmitter)</p>
 <h3 id="conclusion">Conclusion</h3>
 <p>This morning you saw one key component of what makes a robot: its controller. The controller is the brain of the robot which does the interface between its sensors and its actuators. But you saw more than that. Indeed by programming the micro:bit you already had a quick go at doing the interface between some integrated sensors (buttons) and actuators (LED matrix) of the board.</p>
-<p>While this sensors/controller/actuators design is the standard design for mobile robots, it also applies to many other fields. Look around you and you'll see this arrangement is standard in technology as well as in life. Smartphones comes with sensors: a camera, touch(screen), microphones, radio receptor, accelerometer, compas; and with actuators: a screen, speakers and radio emettor. Humans comes with sensors too, although they are harder to isolate than on machine, but making it simple we could say that most of them come equipped with eyes, ears, nose, skin, tongue and proprioceptors (too often forgotten).</p>
+<p>While this sensors/controller/actuators design is the standard design for mobile robots, it also applies to many other fields. Look around you and you'll see this arrangement is standard in technology as well as in life. A smartphone comes with sensors: a camera, touch(screen), microphones, radio receptor, accelerometer, compas; and with actuators: a screen, speakers and radio emettor. Human beings come with sensors too, although they are harder to isolate than on machine, but making it simple we could say that most of them come equipped with eyes, ears, nose, skin, tongue and proprioceptors (too often forgotten).</p>
 <p>We also saw that for the controller to make the link between the sensors and the actuators, you need to give it a program. While you used the micro:bit this morning, what you learn applies to most other controllers: </p>
 <ul>
 <li>a programming language is most of the time composed of standard building blocks such as instructions, variables, conditions, loops and functions</li>
