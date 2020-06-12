@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>2 - Inputs and outputs - Mobile Robotics with micro:bit</title>
+  <title>2 - Monday - Inputs and outputs - Mobile Robotics with micro:bit</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -18,7 +18,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "2 - Inputs and outputs";
+    var mkdocs_page_name = "2 - Monday - Inputs and outputs";
     var mkdocs_page_input_path = "gpio.md";
     var mkdocs_page_url = null;
   </script>
@@ -56,12 +56,14 @@
                     </li>
                 </ul>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../microbit/">1 - Micro:bit board</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../microbit/">1 - Monday - Micro:bit board</a>
                     </li>
                 </ul>
                 <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">2 - Inputs and outputs</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">2 - Monday - Inputs and outputs</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#what-youll-need">What you'll need</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#gpio">GPIO</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#adding-a-simple-sensor">Adding a simple sensor</a>
@@ -76,11 +78,11 @@
                     </li>
                 </ul>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../robot/">3 - Robotics and moving</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../robot/">3 - Tuesday - Robotics and moving</a>
                     </li>
                 </ul>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../mecanics/">3 - Designing and building</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../mecanics/">4 - Wednesday - Designing and building</a>
                     </li>
                 </ul>
                 <ul>
@@ -108,7 +110,7 @@
     
       
     
-    <li>2 - Inputs and outputs</li>
+    <li>2 - Monday - Inputs and outputs</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -121,11 +123,43 @@
               
                 <h1 id="input-and-outputs">Input and outputs</h1>
 <p>This morning we saw how the micro:bit comes equipped with integrated sensors and actuators, but we can all agree that for mobile robotics it might be a bit short of muscles. This afternoon you'll see how it is possible to add sensors and actuators to the micro:bit to go toward our goal of building an autonomous mobile robot.</p>
+<h2 id="what-youll-need">What you'll need</h2>
+<table>
+<thead>
+<tr>
+<th align="center">Buggy mainboard</th>
+<th align="center">Potentiometer and wires</th>
+<th align="center">Servo motor</th>
+<th align="center">Ultrasound sensor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><img alt="" src="Hardware/buggy_board.jpeg" /></td>
+<td align="center"><img alt="" src="Hardware/potar_wires.jpeg" /></td>
+<td align="center"><img alt="" src="Hardware/servo.jpeg" /></td>
+<td align="center"><img alt="" src="Hardware/ultrasound.jpeg" /></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p><strong>Figure:</strong> Necessary equipment.</p>
+</div>
+<p>Every pair of learners will need:</p>
+<ul>
+<li>The equipment required in the previous session</li>
+<li>One bit:buggy mainboard, 5 screws and a screwdriver (all in the bit:buggy box)</li>
+<li>One potentiometer</li>
+<li>6 Wires female-female </li>
+<li>One servo motor (in the bit:buggy box)</li>
+<li>One ultrasound sensor (the HC-SR04)</li>
+<li>3 x AAA batteries</li>
+</ul>
 <h2 id="gpio">GPIO</h2>
-<p>As you might have already noticed, on the bottom of the micro:bit there is a strange set of golden lines (it's not gold, don't start to rip it appart and try selling it!). Those are conductive connectors that will allow you to connect more sensors and actuators to the board. They are what we call inputs and outputs or GPIO (general purpose input/ouputs) which are standards in the world of microcontrollers. Each little golden line is called a pin, and can be used as input or output. The micro:bit has 19 of them in total (more information <a href="https://microbit-micropython.readthedocs.io/en/latest/pin.html">here</a>).</p>
+<p>As you might have already noticed, on the bottom of the micro:bit there is a strange set of golden lines (it's not gold, don't start to rip it appart and try selling it!). Those are conductive connectors that will allow you to connect more sensors and actuators to the board. They are what we call inputs and outputs or GPIO (general purpose input/ouputs) which are standards in the world of microcontrollers. Each little golden line is called a pin, and can be used as input or output. The micro:bit has about 20 of them in total (more information <a href="https://microbit-micropython.readthedocs.io/en/latest/pin.html">here</a>).</p>
 <h2 id="adding-a-simple-sensor">Adding a simple sensor</h2>
-<p>In the material you received, you should have one blue knob per micro:bit. This knob is called a potentiometer. To start simple, we'll see how to capture the position of this potentiometer in out program. Later we'll see how to activate a motor depending on this measure we receive from the potentiometer. </p>
-<p>First, you need to connect physically the potentiometer to the micro:bit. For this I invite you to take the bit:buggy mainboard and attach the micro:bit onto it using 5 screws (see figures below). Then connect the potentiometer using the black/red/yellow dupont wire to the buggy board where it is written 0VG. Align the black wire to the letter G on the potentiometer and on the buggy board.</p>
+<p>Let's see how to use one of those pins as an input. For that we'll use the potentiometer which is a sort of little blue knob in our case. You'll learn how to capture the position of this potentiometer in our program. Later we'll see how to activate a motor depending on this measure we receive from the potentiometer. </p>
+<p>First, you need to connect physically the potentiometer to the micro:bit. For this I invite you to take the bit:buggy mainboard and attach the micro:bit onto it using 5 screws (see figures below).This will allow us to access some pins of the micro:bit more easily and in our case connect the potentiometer. For this connect one cable going from G to G (usually for G which is the ground take a black wire), one to go from V to V (a red one if you have one, this is 3.3V) and one from S to 0 (the signal of the potentiometer to pin0).</p>
 <table>
 <thead>
 <tr>
@@ -140,21 +174,28 @@
 </tr>
 </tbody>
 </table>
-<p><span style="color:red">DO NOT PUT THE BATTERIES IN YET !! You might destroy the micro:bit if you do so...</span></p>
-<p>That's it, we are ready to get some information from our new sensor in our program. Remember the 0VG mark ? It means that we connected the sensor to pin0. To access the information coming from a pin on the micro:bit, it is simple, we have two functions available: <em>read_analog()</em> or <em>read_digital()</em>. If we are interested in getting a binary information (0 or 1), we use <em>read_digital()</em>. That's what we'd use for a button (pressed or not). If we want more, as it is the case with our potentiometer, we have to use the function <em>read_analog()</em>.</p>
+<div class="admonition note">
+<p><strong>Figure:</strong> Connecting the potentiometer to the micro:bit. <span style="color:red">DO NOT PUT THE BATTERIES IN YET !! You might destroy the micro:bit if you do so...</span></p>
+</div>
+<p>As written before, we connected the signal of the potentiometer to pin0. To access the information coming from a pin on the micro:bit, we have two functions available: <em>read_analog()</em> or <em>read_digital()</em>. If we are interested in getting a binary information (0 or 1), we use <em>read_digital()</em>. That's what we'd use for a button (pressed or not). If we want more, as it is the case with our potentiometer, we have to use the function <em>read_analog()</em>.</p>
 <div class="admonition note">
 <p class="admonition-title">Exercice 1</p>
 <ul>
-<li>1.1. Program micro:bit to display the value returned by pin0.read_analog() using the function display.show(). Turn the knob to find what is the range of values that pin0.read_analog() can return.</li>
-<li>1.2. Use the function <em>displayPositiveNumber(n)</em> defined this morning to display the position of the knob.</li>
+<li>1.1. Program micro:bit to display the value returned by pin0.read_analog() using the function display.scroll(). Turn the knob to find what is the range of values that pin0.read_analog() can return.</li>
+<li>1.2. Use the function <em>displayPositiveNumber(n)</em> defined this morning to display the position of the knob. Remember that this function works well only for arguments in [0-25], so you'll need to do some scaling in between.</li>
 </ul>
 </div>
+<details class="note"><summary>Solution exercice 1</summary><p>The value returned by <em>read_analog()</em> is not in any physical unit. It's just a number encoded in 10 bits, meaning that it's value can go theoretically from 0 to 1024. However, this corresponds to the measure of a voltage on pin0 that can go from 0 to 3.3V (and should never go above 3.3V !).</p>
+</details>
 <p>For the curious ones who wonder what the three wires are, here is a bit more information: basically a sensor will most of the time require a power source, that's what the red and black wires are here for (red = 3.3Volts, black = ground), and it will output a signal here using the yellow wire. </p>
 <h2 id="controlling-a-motor">Controlling a motor</h2>
-<p>We've been talking about mobile robots since the beginning, but for now we have to admit it hasn't been very mobile... Let's work on that. It's now time to connect a motor to ouor board. For this get one of the motors uot of the bit:buggy kit, and plug it as shown in the image below (connection on pin1, taking care of putting the black wire facing the letter G).</p>
+<p>We've been talking about mobile robots since the beginning, but for now we have to admit it hasn't been very mobile... Let's work on that. It's now time to connect a motor to our board. For this get one of the motors out of the bit:buggy kit. As you can see, the motor comes with its cable. Plug it as shown in the image below (connection on pin1, taking care of putting the brown/black wire facing the letter G).</p>
 <p><img alt="" src="IMG_0148.jpg" /></p>
-<p>There are many kinds of motor. We will come back on this later. The one you'll use now is called a continuous servo motor. While the way it works will lickely seem a bit obscure, it is a great choice to start with as it is very easy to control.</p>
-<p>Servo motors are controlled using pulse width modulation (PWM). The speed of the one we have here is controlled with a squared signal with a period of 10 milliseconds and a duty cycle going from 5% to 25%. Is that gibberish ? It might well be, but no worries, all you need to know is that to output a squared signal with a 10 ms period on pin1 you need to use the instruction <em>pin1.set_analog_period(10)</em> and to change the duty cycle from 5 to 25% we cann use the instruction <em>pin1.write_analog(d)</em> with <em>d</em> in [50-250]. If you want to know more about PWMs you can read <a href="https://microbit-micropython.readthedocs.io/en/latest/pin.html">this page</a> and to know more about continuous servo motors <a href="https://learn.adafruit.com/adafruit-motor-selection-guide/continuous-rotation-servos">this page</a>.</p>
+<div class="admonition note">
+<p><strong>Figure:</strong> Connecting the potentiometer and the servo motor to the micro:bit. </p>
+</div>
+<p>There are many kinds of motor. We will come back on this later. The one you'll use now is called a continuous servo motor. While the way it works will likely seem a bit obscure, it is a great choice to start with as it is very easy to control.</p>
+<p>Servo motors are controlled using pulse width modulation (PWM). The speed of the one we have here is controlled with a squared signal with a period of 10 milliseconds and a duty cycle going from 5% to 25%. Is that gibberish ? It might well be, but no worries, all you need to know is that to output a squared signal with a 10 ms period on pin1 you need to use the instruction <em>pin1.set_analog_period(10)</em> and to change the duty cycle from 5 to 25% we can use the instruction <em>pin1.write_analog(d)</em> with <em>d</em> in [50-250]. If you want to know more about PWMs you can read <a href="https://microbit-micropython.readthedocs.io/en/latest/pin.html">this page</a> and to know more about continuous servo motors <a href="https://learn.adafruit.com/adafruit-motor-selection-guide/continuous-rotation-servos">this page</a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Exercice 2</p>
 <ul>
@@ -163,16 +204,16 @@
 </ul>
 </div>
 <h2 id="measuring-a-distance">Measuring a distance</h2>
-<p>Now that we are confortable with a simple sensor and actuator, it's time to complexify things a bit and use the HC-SR04. This sensor is a distance sennsor. One thing I like about itis that it makes a great link between physics and computer science. Here is how it works: it sends an ultrasound signal and it measures how long it takes to receive an echo, like bats do. Thanks to the time between the emission and the reception and a bit of physics (<em>distance = time * velocity</em>) you can estimate the distance of obstacles facing the sensor.</p>
-<p>Now for the electronics, that's where things get a bit tricky: the sensor need to be powered (2 cables) and it needs 2 pins connected to the controller, one output of the controller to say when it wants to send a signal, one input of the controller to be informed about the echo. As we'll see, in terms of programming, it is quite simple, however there is a big problem to solve before programming...</p>
-<p>When we were using the red and black cable from the buggy mainboard (without the batterie!) to powered the potentiometer and motor, it was working because both can run with 3.3 Volts which is the voltage of the micro:bit. Here is the problem: HC-SR04 does not work with 3.3 V. It needs 5 Volts. This gives a two-sided problem: </p>
+<p>Now that we are confortable with a simple sensor and actuator, it's time to make things a bit more complex and use the HC-SR04. This sensor is a distance sensor. One thing I like about it is that it makes a great link between physics and computer science. Here is how it works: it sends an ultrasound signal and it measures how long it takes to receive an echo, like bats do. Thanks to the time between the emission and the reception and a bit of physics (<em>distance = time * velocity</em>) you can estimate the distance of obstacles facing the sensor.</p>
+<p>Now for the electronics, that's where things get a bit tricky: the sensor needs to be powered (2 cables) and it needs 2 pins connected to the controller: one for the controller to define when to send the ultrasound wave, one for it to be informed about when the echo is received. As we'll see, in terms of programming, it is quite simple, however there is a big problem to solve before programming...</p>
+<p>When we were using the red and black cable from the buggy mainboard (without the battery!) to power the potentiometer and motor, it was working because both can run with 3.3 Volts which is the voltage of the micro:bit. But the HC-SR04 does not work with 3.3 V. It needs 5 Volts. This gives a two-sided problem: </p>
 <ul>
 <li>The micro:bit can not power up the HC-SR04; </li>
 <li>The HC-SR04, if it is powered correctly, will output a 5V signal as its echo, while if we give 5V to a micro:bit input it is likely to burn it...</li>
 </ul>
-<p>But don't worry, we've got everything planned: To power get 5V it is easy, we simply have to put the batteries in the buggy mainboard annd turn on the switch. The power of the board will go from 3.3 to 5V. Then, do you remember the potentiometer ? We can use it as a sensor, as we did, but actually we can also use it as a voltage divider to lower the voltage of the echo signal down. </p>
-<p>The way we used it as a sensor was to connect it with 3.3V and the ground, and it outputed a portion of 3.3V depending on the position of the knob, which is what we measured with the micro:bit. Instead, we can now feed it with the 0 to 5V echo signal coming from the HC-SR04, and make it output a portion of that, making sure it does not goes over 3.3V. Also we need to not take a too small portion of the signal, for instance imagine we outputed 0% of the signal with the potentiometer, then we would not be able to understand when the echo is received on the micro:bit. To get it to work we need the high value of the signal to be 2.3 Volt minimum (2.3 = 0.7 * 3.3... see <a href="https://tech.microbit.org/hardware/edgeconnector/">here</a> for more information). Therefore if we put the knob at its mid position, it should output a signal oscillating in between 0 and 2.5V and it should work. </p>
-<p>So practically, here is what to do: as shown in the pictures below, power the HC-SR04 (red wire goes from VCC to V and black from ground to G); connect pin0 to Trig for micro:bt to send the trigger; put the knob oof the potentiometer at its mid position and connect it to echo and the micro:bit to generate a safe echo for micro:bit (orange from echo to V, black from G to G, white from S to 1).</p>
+<p>But don't worry, we've got everything planned. To get 5V, we have to put the batteries in the buggy mainboard and turn on the switch. The power of the board will go from 3.3 to 5V. Then, do you remember the potentiometer ? We can use it as a sensor, as we did, but actually we can also use it as a voltage divider to lower the voltage of the echo signal down. </p>
+<p>The way we used it as a sensor was to connect it with 3.3V and the ground, and it outputed a portion of 3.3V depending on the position of the knob, which is what we measured with the micro:bit. Instead, we can now feed it with the 0 to 5V echo signal coming from the HC-SR04, and make it output a portion of that, making sure it does not go over 3.3V. Also we need to take a large enough portion of the signal, for instance imagine we outputed 0% of the signal with the potentiometer, then we would not be able to understand when the echo is received on the micro:bit. To get it to work we need the high value of the signal to be 2.3 Volt minimum (2.3 = 0.7 * 3.3... see <a href="https://tech.microbit.org/hardware/edgeconnector/">here</a> for more information). Therefore if we put the knob at its mid position, it should output a signal oscillating in between 0 and 2.5V and it should work. </p>
+<p>So practically, here is what to do: disconnect everything and then, <strong>as shown in the pictures below</strong>: power the HC-SR04 (red wire goes from VCC to V and black from ground to G); connect pin0 to Trig for micro:bit to send the trigger; put the knob of the potentiometer at its mid position and connect it to echo and the micro:bit to generate a safe echo for micro:bit (orange from echo to V, black from G to G, white from S to 1).</p>
 <table>
 <thead>
 <tr>
@@ -187,6 +228,9 @@
 </tr>
 </tbody>
 </table>
+<div class="admonition note">
+<p><strong>Figure:</strong> Connecting the utlrasound sensor to the micro:bit. </p>
+</div>
 <p>Congratulation ! Our circuit is ready and its time to come back closer to our confort zone. Here is the function that we will use to measure the distance of an obstacle using our montage in centimeters.</p>
 <pre><code class="py">from microbit import *
 import machine
@@ -218,11 +262,11 @@ def get_dist_in_cm():
 <p class="admonition-title">Exercice 3</p>
 <ul>
 <li>3.1. Read the code to verify if it matches the sensor specifications that we defined previously. Will this work if I call the function <em>get_dist()</em> ?</li>
-<li>3.2. It won't work ! There is something missing: <em>Constant</em> is not defined and that because I want you to find it using the laws of physics.</li>
+<li>3.2. It won't work ! There is something missing: <em>Constant</em> is not defined and that's because I want you to find it now using the laws of physics.</li>
 <li>3.3. Once you found the value of <em>Constant</em>, write a program to display the distance using the function <em>displayPositiveNumber(n)</em>.</li>
 </ul>
 </div>
-<details class="note"><summary>Solution exercice 3</summary><p>In the environment we work in, the sounds travel at about 343 meters per seconds. That corresponds to 0.0343 centimeters per microseconds. While <em>distance = time x velocity</em>, in our case the distance is travelled back and forth, therefore we have <em>2 x distance = time x velocity</em>. Which leads to <em>d = t x v / 2 = t x 0.01715 = t / 58.3</em>.</p>
+<details class="note"><summary>Solution exercice 3</summary><p>In the environment we work in, the sounds travel at about 343 meters per seconds. That corresponds to 0.0343 centimeters per microseconds. While <em>distance = time x velocity</em>, in our case the distance is travelled back and forth, therefore we have <em>2 x distance = time x velocity</em>. Which leads to <em>d = t x v / 2 = t x 0.0343 / 2 = t x 0.01715 = t / 58.3</em>. So <em>Constant = 58.3</em>.</p>
 </details>
 <h2 id="conclusion">Conclusion</h2>
 <p>That's it for today. It's time to unplug everything and turn the buggy mainboard off using it's switch, to save the batteries for the coming days.</p>
@@ -235,10 +279,10 @@ def get_dist_in_cm():
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../robot/" class="btn btn-neutral float-right" title="3 - Robotics and moving">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../robot/" class="btn btn-neutral float-right" title="3 - Tuesday - Robotics and moving">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../microbit/" class="btn btn-neutral" title="1 - Micro:bit board"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../microbit/" class="btn btn-neutral" title="1 - Monday - Micro:bit board"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
