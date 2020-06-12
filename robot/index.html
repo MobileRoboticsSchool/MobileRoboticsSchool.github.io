@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>3 - Robotics and moving - Mobile Robotics with micro:bit</title>
+  <title>3 - Tuesday - Robotics and moving - Mobile Robotics with micro:bit</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -18,7 +18,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "3 - Robotics and moving";
+    var mkdocs_page_name = "3 - Tuesday - Robotics and moving";
     var mkdocs_page_input_path = "robot.md";
     var mkdocs_page_url = null;
   </script>
@@ -56,15 +56,15 @@
                     </li>
                 </ul>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../microbit/">1 - Micro:bit board</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../microbit/">1 - Monday - Micro:bit board</a>
                     </li>
                 </ul>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../gpio/">2 - Inputs and outputs</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../gpio/">2 - Monday - Inputs and outputs</a>
                     </li>
                 </ul>
                 <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">3 - Robotics and moving</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">3 - Tuesday - Robotics and moving</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#building-the-bigbuggy">Building the big:buggy</a>
     </li>
@@ -72,13 +72,15 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#control-laws">Control laws</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#conclusion-and-afternoon-program">Conclusion and afternoon program</a>
+    <li class="toctree-l2"><a class="reference internal" href="#remote-communication">Remote communication</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#conclusion">Conclusion</a>
     </li>
     </ul>
                     </li>
                 </ul>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../mecanics/">3 - Designing and building</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../mecanics/">4 - Wednesday - Designing and building</a>
                     </li>
                 </ul>
                 <ul>
@@ -106,7 +108,7 @@
     
       
     
-    <li>3 - Robotics and moving</li>
+    <li>3 - Tuesday - Robotics and moving</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -120,6 +122,27 @@
                 <h1 id="mobile-robotics-control">Mobile robotics - Control</h1>
 <p>Yesterday, you learned how to make a robot sense and how to make it act on its environment. But there was a big things missing to make the robot really move: a frame, a structure to hold all the parts together, we could say the bones of our mobile robot. Today we'll solve this problem: you'll build a frame, and following you will discover some standard mobile robotics problems and learn how to solve them.</p>
 <h2 id="building-the-bigbuggy">Building the big:buggy</h2>
+<table>
+<thead>
+<tr>
+<th align="center">Read the manual</th>
+<th align="center">Collect the parts</th>
+<th align="center">Building</th>
+<th align="center">Done</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><img alt="" src="build/1.jpeg" /></td>
+<td align="center"><img alt="" src="build/2.jpeg" /></td>
+<td align="center"><img alt="" src="build/3.jpeg" /></td>
+<td align="center"><img alt="" src="build/4.jpeg" /></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p><strong>Figure:</strong> Building the bit:buggy.</p>
+</div>
 <p>To build the robot, I invite you to follow the instructions provided in the Bit:Buggy isntruction manual. However this manual is missing some valuable information:</p>
 <ul>
 <li>Before starting identify the two bags that come along with the servo motors (in them there should screws and several servo horns, that is white plastic pieces to put on the servos). Those pieces won't be of any use and are not listed in the component list of the bit:buggy car, so put them aside.</li>
@@ -140,18 +163,47 @@
 </ul>
 </div>
 <h2 id="control-laws">Control laws</h2>
-<p>Exercise: program the buggy to always follow the steepest ascent.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Pitch</th>
+<th align="center">Roll</th>
+<th align="center">Roll</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><img alt="" src="slope/Pitch.png" /></td>
+<td align="center"><img alt="" src="slope/Roll1.png" /></td>
+<td align="center"><img alt="" src="slope/Roll2.png" /></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p><strong>Figure:</strong> The buggy moves along the steepest ascent.</p>
+</div>
+<p>Exercise: program the buggy to always follow the steepest ascent using the <em>x</em> and <em>z</em> axes of the accelerometer. A tutorial with useful information about the accelerometer can be found <a href="https://microbit-challenges.readthedocs.io/en/latest/tutorials/accelerometer.html">here</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Exercice 2</p>
 <p>ON/OFF control law. </p>
+</div>
+<p>Some explaination about proportional control laws.</p>
+<div class="admonition note">
+<p class="admonition-title">Exercice 3</p>
 <p>Proportional control law. Focus on problem decomposition: first one dimension, then second, then join them.</p>
-<h2 id="conclusion-and-afternoon-program">Conclusion and afternoon program</h2>
-<p>Remainder of lessons learned.</p>
-<p>Afternoon in autonomy (Anthony available for questions):</p>
+</div>
+<h2 id="remote-communication">Remote communication</h2>
+<p>Discovering the radio emettor and receptor. </p>
+<div class="admonition note">
+<p class="admonition-title">Exercice 4</p>
 <ul>
-<li>First period: Everyone takes time to go through the previous exercises and identify if there has been anything left unclear. If there is discuss with the group to clarify the situation and do the corresponding exercise again if needed.</li>
-<li>Second period: Discovering the radio emettor and receptor. Final goal: control the buggy from another micro:bit by tilting it. Again focus on problem decomposition.</li>
-<li>Optional 1: Control the buggy using another micro:bit equipped with two potentiometers (remove the batteries if you do so to make sure you don't give 5V to micro:bit and burn it). One potentiometer for the forward/backward speed, the other for turning (like on many RC vehicles)</li>
-<li>Optional 2 (hard): Program the buggy to always come back to the orientation it started with. For this you'll need to use it's internal compas which is quite a special sensor.</li>
+<li>4.1 Control the buggy from another micro:bit by tilting it. Again focus on problem decomposition.</li>
+<li>4.2 Optional 1: Control the buggy using another micro:bit equipped with two potentiometers (remove the batteries if you do so to make sure you don't give 5V to micro:bit and burn it). One potentiometer for the forward/backward speed, the other for turning (like on many RC vehicles)</li>
+<li>4.3 Optional 2 (hard): Program the buggy to always come back to the orientation it started with. For this you'll need to use it's internal compas which is quite a special sensor.</li>
 </ul>
+</div>
+<h2 id="conclusion">Conclusion</h2>
+<p>Remainder of lessons learned.</p>
               
             </div>
           </div>
@@ -159,10 +211,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../mecanics/" class="btn btn-neutral float-right" title="3 - Designing and building">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../mecanics/" class="btn btn-neutral float-right" title="4 - Wednesday - Designing and building">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../gpio/" class="btn btn-neutral" title="2 - Inputs and outputs"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../gpio/" class="btn btn-neutral" title="2 - Monday - Inputs and outputs"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
