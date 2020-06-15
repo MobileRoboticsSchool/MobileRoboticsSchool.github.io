@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Contacts - Mobile Robotics with micro:bit</title>
+  <title>Going further - Mobile Robotics with micro:bit</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -19,8 +19,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Contacts";
-    var mkdocs_page_input_path = "about.md";
+    var mkdocs_page_name = "Going further";
+    var mkdocs_page_input_path = "further.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -79,14 +79,24 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Thursday</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../further/">Going further</a>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Going further</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#controllers">Controllers</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#sensors">Sensors</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#actuators">Actuators</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#extension-board-and-electronics">Extension board and electronics</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#making">Making</a>
+    </li>
+    </ul>
                     </li>
                 </ul>
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Contacts</a>
-    <ul class="current">
-    </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../about/">Contacts</a>
                     </li>
                 </ul>
       </div>
@@ -109,8 +119,12 @@
     <li><a href="..">Docs</a> &raquo;</li>
     
       
+        
+          <li>Thursday &raquo;</li>
+        
+      
     
-    <li>Contacts</li>
+    <li>Going further</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -121,15 +135,22 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="about-the-author">About the author</h1>
-<p>After a few years in computer science research, working on very stimulating subjects such as autonomous robotics, augmented reality, 3D reconstruction and machine learning, my pleasure to share my enthusiasm for computer science has been growing. So, from computer science research I made a smooth transition to teaching it. </p>
-<p>I enjoy computer science because it offers me an infinite source of puzzles, but it's not the only reason. I think that understanding computers and having skills in the field is paramount to understanding our world which is becoming more and more digital. So I wish for everyone to know that the computer science world is open to them. and I hope to give the keys to this world to as many people as possible in the future.</p>
-<p>Luckily I joined a wonderfull team in EPFL which has a similar goal as mine (among others). That's how I ended up co animating the Thymio mobile robotics summer school with Professor Francesco Mondada to progressively animate the whole thing. Finally COVID19 forced us to search for an online format, which led me to propose a new form of summerschool based on micro:bit.</p>
-<h1 id="collaborators">Collaborators</h1>
-<p>This summerschool won't be possible without the support of the Service de Promotion de l'Education of EPFL. It also wouldn't have been possible without the trust that Prof. F. Mondada gave me and the opportunities he gave me coanimating, animating and tinkering in the previous editions of the summerschool.</p>
-<p>I'm also thankfull for the help of Christian Chang, Anthony Guinchard and  Aditya Mehrotra, for the inspiration they gave me to integrate a makers touch and for their help in the preparation of the program, the ressources and in the animation.</p>
-<h1 id="contact">Contact</h1>
-<p>Find the information to contact me on my <a href="https://people.epfl.ch/amaury.dame?lang=en">professional page</a>.</p>
+                <h1 id="going-further">Going further</h1>
+<p>Here are ways you could follow to deepenn your knowledge and practice in mobile robotics while still taking incremental steps.</p>
+<h2 id="controllers">Controllers</h2>
+<p>Challenge: create an autonomous robot base on arduino.
+Keep the same sensors and actuators, as a result you'll only have to learn to program in C++ and find a way to power the arduino (I'd recommand using a power bank)</p>
+<h2 id="sensors">Sensors</h2>
+<p>Challenge: make a robot that follows the light =&gt; keep the same controller, the micro:bit, and learn to use new sensors. </p>
+<p>The challenge could be to learn to use new distance sensors (sharp, TOF). What are their advantages, disadvantages ?</p>
+<h2 id="actuators">Actuators</h2>
+<p>Challenge: Make a robot that goes much faster, for this you'll have only to change the motors. One way could be to use DC motors.</p>
+<p>Other challenge:  make the robot more precise in its displacement =&gt; use stepper motors.</p>
+<h2 id="extension-board-and-electronics">Extension board and electronics</h2>
+<p>Challenge: find a way to get access to more inputs and outputs =&gt; new extension board and power supply.</p>
+<h2 id="making">Making</h2>
+<p>Challenge: Get in the closest fablab and laser cut or 3D print your own frame to hold all the electronics together.</p>
+<p>Or build any automaton with simple material you can find at home.</p>
               
             </div>
           </div>
@@ -137,8 +158,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
+        <a href="../about/" class="btn btn-neutral float-right" title="Contacts">Next <span class="icon icon-circle-arrow-right"></span></a>
       
-        <a href="../further/" class="btn btn-neutral" title="Going further"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+        <a href="../cad/" class="btn btn-neutral" title="CAD"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -164,8 +187,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../further/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../cad/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
+      
+        <span style="margin-left: 15px"><a href="../about/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
