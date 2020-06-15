@@ -9,16 +9,17 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>1 - Monday - Micro:bit board - Mobile Robotics with micro:bit</title>
+  <title>Micro:bit board - Mobile Robotics with micro:bit</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
   <link rel="stylesheet" href="../css/theme_extra.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  <link href="../css/extra.css" rel="stylesheet" />
   
   <script>
     // Current page data
-    var mkdocs_page_name = "1 - Monday - Micro:bit board";
+    var mkdocs_page_name = "Micro:bit board";
     var mkdocs_page_input_path = "microbit.md";
     var mkdocs_page_url = null;
   </script>
@@ -51,42 +52,49 @@
                     <li class="toctree-l1"><a class="reference internal" href="..">Welcome</a>
                     </li>
                 </ul>
+                <p class="caption"><span class="caption-text">Preperation</span></p>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../python/">0 - Introduction to Python</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../python/">Introduction to Python</a>
                     </li>
                 </ul>
+                <p class="caption"><span class="caption-text">Monday</span></p>
                 <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">1 - Monday - Micro:bit board</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Micro:bit board</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#what-youll-need">What you'll need</a>
+    <li class="toctree-l2"><a class="reference internal" href="#what-you-will-need">What you will need</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#programming-microbit">Programming Micro:bit</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#example-program">Example program</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#microbit-specific-functions">Micro:bit specific functions</a>
+    <li class="toctree-l2"><a class="reference internal" href="#microbit-specific-functions">Micro:bit specific functions</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#your-first-program">Your first program</a>
+    <li class="toctree-l2"><a class="reference internal" href="#your-first-program">Your first program</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#going-further">Going further</a>
+    <li class="toctree-l2"><a class="reference internal" href="#going-further">Going further</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#conclusion">Conclusion</a>
-    </li>
-        </ul>
+    <li class="toctree-l2"><a class="reference internal" href="#conclusion">Conclusion</a>
     </li>
     </ul>
                     </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../gpio/">2 - Monday - Inputs and outputs</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../gpio/">Inputs and outputs</a>
                     </li>
                 </ul>
+                <p class="caption"><span class="caption-text">Tuesday</span></p>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../robot/">3 - Tuesday - Robotics and moving</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../robot/">Robotics and moving</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../radio/">Engineering and radio communication </a>
                     </li>
                 </ul>
+                <p class="caption"><span class="caption-text">Wednesday</span></p>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../mecanics/">4 - Wednesday - Designing and building</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../mecanics/">Designing and building</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../cad/">CAD</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Thursday</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../further/">Going further</a>
                     </li>
                 </ul>
                 <ul>
@@ -113,8 +121,12 @@
     <li><a href="..">Docs</a> &raquo;</li>
     
       
+        
+          <li>Monday &raquo;</li>
+        
+      
     
-    <li>1 - Monday - Micro:bit board</li>
+    <li>Micro:bit board</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -126,8 +138,8 @@
             <div class="section">
               
                 <h1 id="introduction-to-microbit">Introduction to micro:bit</h1>
-<p>This morning, you will discover what will be the brain of our mobile robots: the micro:bit. You'll see that this controllers comes already out of the box with sensors and actuators, which are the building blocks of a robot, and you'll learn how to interact with them.</p>
-<h2 id="what-youll-need">What you'll need</h2>
+<p>This morning, you will discover what will be the brain of the mobile robot you will build: the micro:bit. You'll see that this controller comes already out of the box with sensors and actuators, which are the building blocks of a robot, and you'll learn how to interact with them.</p>
+<h2 id="what-you-will-need">What you will need</h2>
 <p>Every pair of learners will need:</p>
 <ul>
 <li>A computer equipped with a connection to internet and a browser (ideally Chrome)</li>
@@ -135,18 +147,17 @@
 <li>A usb cable to connect the micro:bit to the computer.</li>
 </ul>
 <h2 id="programming-microbit">Programming Micro:bit</h2>
-<h3 id="example-program">Example program</h3>
-<p>Let's get started. For now, we'll only need the micro:bit board, a computer with a web browser (Chrome preferably), and a cable to connect the computer and the micro:bit. So take this with you and connect everything together. You should see an external drive appear on your computer called <em>MICROBIT</em>.</p>
-<p>Now you'll use the web browser to access a <a href="https://python.microbit.org/v/2.0">Python online editor for micro:bit</a>. It you go on this page you'll be facing with a big black area with some python code. This area is the editor where you'll type your programs. On top of that you should see different buttons/icons that will allow you to interact with your computer, and the micro:bit directly if you are using Chrome. </p>
-<p>For now, before doing any programming, let's see how you can put the example "Hello, World!" program onto the micro:bit.</p>
+<p>Gather all the material listed above and connect the micro:bit to the computer. You should see an external drive appear on your computer called <em>MICROBIT</em>.</p>
+<p>To program the micro:bit you will need an editor. For this open the <a href="https://python.microbit.org/v/2.0">Python online editor for micro:bit</a> on your web browser. On this page you'll be facing with a big black area with some python code. This area is the editor where you'll type your programs. On top of that you should see different buttons/icons that will allow you to interact with your computer, and the micro:bit directly if you are using Chrome. </p>
+<p>When you open the editor, it comes with an "Hello, World!" example. To start, you have to learn to transfer a program onto the micro:bit. For that:</p>
 <ul>
-<li>First option: you click the Download button. This will download the program as an <em>.hex</em> file named <em>microbit_program.hex</em>. To put it in the micro:bit, simply drag and drop the <em>.hex</em> to the MICROBIT external drive. </li>
-<li>Second option if you have chrome: click <em>Connect</em>, select the micro:bit in the menu and click again on connect, and now the <em>Download</em> button should have transformed into a <em>Flash</em> button. This button allows you to directly put (flash) the program from the web-browser to the micro:bit. </li>
+<li>First option: you click the Download button. This will download the program as an <em>.hex</em> file named <em>microbit_program.hex</em> on your computer. To put it in the micro:bit, drag and drop the <em>.hex</em> to the MICROBIT external drive. </li>
+<li>Second and easiest option if you have chrome: click <em>Connect</em>, select the micro:bit in the menu and click again on connect, and now the <em>Download</em> button should have transformed into a <em>Flash</em> button. This button allows you to directly put (flash) the program from the web-browser to the micro:bit. </li>
 </ul>
 <p>At the end of both options, an orange LED should blink on the micro:bit, informing you about the transmission. When the transfer is over the program should start automatically and you should see the execution of the program on the red LEDs of the micro:bit. Congratulation, you gave your first program to the micro:bit !</p>
-<h3 id="microbit-specific-functions">Micro:bit specific functions</h3>
-<p>Using the example program from above, you'll now learn the standard structure of the programs in micro-controllers. This structure is and always will almost always be as follow: first, an initialisation, then a loop. Take the time to identify those two parts in the previous program.</p>
-<p>Following the same structure, here is a program to show you some specific micro:bit functions that are available to use its buttons (see <em>button_a.was_pressed()</em>) and its LED matrix (see <em>display.set_pixel()</em>) in python:</p>
+<h2 id="microbit-specific-functions">Micro:bit specific functions</h2>
+<p>The <strong>structure</strong> of a program on a microcontroller is and will almost always be as follow: first, an <strong>initialisation</strong>, then a <strong>loop</strong>. Take the time to identify those two parts in the previous program.</p>
+<p>Here is another program to show you some specific micro:bit functions that are available to use its buttons (<em>button_a.was_pressed()</em>) and its LED matrix (<em>display.set_pixel()</em> and <em>display.clear()</em>):</p>
 <pre><code class="py"># Initialisation
 # Get standard librairies
 from microbit import *
@@ -167,11 +178,13 @@ while True:
 <div class="admonition note">
 <p class="admonition-title">Exercice 1</p>
 <ul>
-<li>1.1 Work out how the functions <em>set_pixel()</em> and <em>sleep()</em> work either by reading the doc (<a href="https://microbit-micropython.readthedocs.io/en/latest/microbit.html">sleep doc</a>, <a href="https://microbit-micropython.readthedocs.io/en/latest/display.html">display doc</a>) or by tinkering with the code... or both ! </li>
-<li>1.2 Try to execute the instruction <em>display.set_pixel(-1,2,9)</em> and see what happens. Normally you should see the <strong>error</strong> "Line ... valueError index out of bounds". That's basically what will happen if you ask the micro:bit to do something it cannot do. <strong>It will tell you what's his problem (the line)</strong>, and why (in this case the first argument of set_pixel can only accept values from 0 to 4). With experience, most of the time, only the line number will be enough for you to correct your mistake.</li>
+<li>1.1 Flash the micro:bit with this program. What do the the arguments of the functions <em>set_pixel()</em> and <em>sleep()</em> correspond to ? To answer either try to change the program or read the do (<a href="https://microbit-micropython.readthedocs.io/en/latest/microbit.html">sleep doc</a>, <a href="https://microbit-micropython.readthedocs.io/en/latest/display.html">display doc</a>) or even better, do both. </li>
+<li>1.2 Execute the instruction <em>display.set_pixel(-1,2,9)</em> in your program and see what happens. </li>
 </ul>
 </div>
-<h3 id="your-first-program">Your first program</h3>
+<details class="note"><summary>Solution exercise 1.2</summary><p>Normally you should see the <strong>error</strong> "Line ... valueError index out of bounds". That's what will happen if you ask the micro:bit to do something it cannot do. <strong>It will tell you the exact line where you shoud look to solve you problem</strong>, and why (in this case the first argument of set_pixel can only accept values from 0 to 4). With experience, most of the time, only the line number will be enough for you to correct your mistake.</p>
+</details>
+<h2 id="your-first-program">Your first program</h2>
 <table>
 <thead>
 <tr>
@@ -193,18 +206,19 @@ while True:
 <div class="admonition note">
 <p><strong>Figure:</strong> A program to display rapidely the value of a variable from 0 to 5.</p>
 </div>
-<p>Now that you know how to interact with micro:bit, it's time for you to bring your knowledge of python into play, especially those of variables, conditions, loops and functions. The goal will be to define a function that will help us work with micro:bit all through the week. Indeed, the function <em>display.show()</em> is powerful and can show many types of variables (integers, floats, strings) and useful to debug and show us some valuable information. However, as we saw with our "Hello, World!" example, this function is also not very reactive, while we need to be reactive not to have to wait 2 seconds for each piece of information !</p>
+<p>In the previous exercise  you learned to interact with some basic functions of micro:bit. It is now time to bring your knowledge of python into play to interact with those. By reinvesting your knowledge of variables, conditions, loops and functions you will define a function that will help us work with micro:bit all through the week. </p>
+<p>The functions <em>display.show()</em> and <em>display.scroll()</em> are powerful and can show many types of variables (integers, floats, strings) on the screen of the micro:bit. Such functions are useful to debug in showing us some valuable information. However, as we saw with the "Hello, World!" example, this function is also not very reactive, while we need to be reactive in robotics. We can not wait 2 seconds for each piece of information. So you will define a function which will solve this problem.</p>
 <div class="admonition note">
 <p class="admonition-title">Exercice 2</p>
 <ul>
-<li>2.1. Define an integer variable <em>x</em>, initialise it to 0 and display its value using <em>display.show()</em>.</li>
-<li>2.2. Program the micro:bit so that you can use the buttons A and B to increase and decrease the value of <em>x</em></li>
-<li>2.3. Let's forget about the value of <em>x</em> for this sub-exercise. Replace the line that was displaying the value of <em>x</em> and instead, use a <em>for i in range(4): ...</em> loop and the function <em>display.set_pixel()</em> to light up the first line of LEDs.</li>
-<li>2.4. Now try to modify your program to display the value of <em>x</em> as in the pictures above. Hint: you can either change the for loop, either add a condition.</li>
-<li>2.5. Define a function <em>displayPositiveNumber(n)</em>, that shows the value of an integer n (n in [0-5]) on the LED matrix</li>
+<li>2.1. Define an integer variable <em>x</em>, initialise it to 0 and display its value every 100 ms using <em>display.scroll()</em>.</li>
+<li>2.2. Program the micro:bit so that you can use the buttons A and B to increase and decrease the value of <em>x</em>. What happens if <em>x &gt; 9</em>, can you show <em>x</em> value every 100 ms ?</li>
+<li>2.3. Forget about the value of <em>x</em> for this sub-exercise. Replace the line that was displaying the value of <em>x</em> and instead, use a <em>for i in range(4): ...</em> loop and the function <em>display.set_pixel()</em> to light up the first line of LEDs.</li>
+<li>2.4. Modify your program to display the value of <em>x</em> as in the pictures above. Hint: you can either change the for loop, either add a condition.</li>
+<li>2.5. Define a function <em>displayPositiveNumber(n)</em>, that shows the value of an integer <em>n</em> for <em>n in [0-5]</em> on the LED matrix.</li>
 </ul>
 </div>
-<h3 id="going-further">Going further</h3>
+<h2 id="going-further">Going further</h2>
 <table>
 <thead>
 <tr>
@@ -223,7 +237,7 @@ while True:
 </tr>
 </tbody>
 </table>
-<p>We are going somewhere interesting with this function. If we plug some sensors to the micro:bit and we want to display some quantitative information coming from them, that's exactly the sort of function we need. However, for now, our resolution is very little (only 6 possible values can be displayed). To get a richer information, let's use the whole LED matrix. For this you'll change our previous function slightly as follow and work out what is going on:</p>
+<p>If we plug some sensors to the micro:bit and we want to display some quantitative information coming from them, <em>displayPositiveNumber(n)</em> is exactly the sort of function we need. However, for now, our resolution is very little (only 6 possible values can be displayed). To get a richer feedback, let's use the whole LED matrix. For this you'll modify the previous function slightly:</p>
 <pre><code class="py">def displayPositiveNumber(d):
     display.clear()
     for i in range(d):
@@ -234,14 +248,14 @@ while True:
 <p class="admonition-title">Exercice 3</p>
 <ul>
 <li>3.1. On a piece of paper, represent a 5x5 grid and set a number for each row and column, starting on the top left with the coordinate (0,0). For i = {4,5,6,24} compute <em>i%5</em> (meaning <em>i mod 5</em>... meaning the rest of the integer division of i by 5) and <em>int(i/5)</em> (meaning the integer part of i/5). Write down the value of i in the grid at the position (i%5,int(i/5)).</li>
-<li>3.2. Now that you should have a better understanding of this function, test it by updating the code of the previous exercise. In the end you should have a program to set the value of x using the buttons and display its value for x in [0-25].</li>
+<li>3.2. Now that you should have a better understanding of this function, test it by updating the code in the previous exercise. In the end you should have a program to set the value of <em>x</em> using the buttons and display its value for <em>x in [0-25]</em>.</li>
 <li>3.3. (Optional) The function <em>displayPositiveNumber()</em> is reliable only for values in [0-25]. Make it more reliable by adding a condition so that if the provided argument is not in that range, you will display something special (for instance one LED on in the middle of the LED matrix).</li>
-<li>3.4. (Optional) There are different ways to write a function such as <em>displayPositiveNumber(d)</em>. Find another way using nested loops (a loop in a loop). There is also another way using two counters (integer variables) and a condition that allows to not use modulo or the integer division.</li>
+<li>3.4. (Optional) There are different ways to write a function such as <em>displayPositiveNumber(d)</em>. Find other ways to define the function. You could for instance use nested loops (a loop in a loop) or use two counters (integer variables) and a condition (that would allows to not use modulo or the integer division).</li>
 </ul>
 </div>
-<p>We are now equipped with a function which is going to be very useful this afternoon and in the coming days and which hopefully you understand well. Save it using the "Load/Save" button, followed by clicking the "Downnload Python Script" button. </p>
-<h3 id="conclusion">Conclusion</h3>
-<p>This morning you saw one key component of what makes a robot: its controller. The controller is the brain of the robot which does the interface between its sensors and its actuators. But you saw more than that. Indeed by programming the micro:bit you already had a quick go at doing the interface between some integrated sensors (buttons) and actuators (LED matrix) of the board.</p>
+<p>You are now equipped with a function which is going to be very useful this afternoon. To reuse it this afternoon, save it using the "Load/Save" button, followed by clicking the "Download Python Script" button. This will allow you to save it as a python file an reload it this afternoon. If you did not understand the functioning of this function, take some time to do so. Talk to the people around you if you need help. </p>
+<h2 id="conclusion">Conclusion</h2>
+<p>This morning you saw one key component of what makes a robot: its <strong>controller</strong>. The controller is the brain of the robot which does the interface between its <strong>sensors</strong> and its <strong>actuators</strong>. But you saw more than that. Indeed by programming the micro:bit you already had a quick go at doing the interface between some integrated sensors (buttons) and actuators (LED matrix) of the board.</p>
 <p>While this sensors/controller/actuators design is the standard design for mobile robots, it also applies to many other fields. Look around you and you'll see this arrangement is standard in technology as well as in life. A smartphone comes with sensors: a camera, touch(screen), microphones, radio receptor, accelerometer, compas; and with actuators: a screen, speakers and radio emettor. Human beings come with sensors too, although they are harder to isolate than on machine, but making it simple we could say that most of them come equipped with eyes, ears, nose, skin, tongue and proprioceptors (too often forgotten).</p>
 <p>We also saw that for the controller to make the link between the sensors and the actuators, you need to give it a program. While you used the micro:bit this morning, what you learn applies to most other controllers: </p>
 <ul>
@@ -255,10 +269,10 @@ while True:
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../gpio/" class="btn btn-neutral float-right" title="2 - Monday - Inputs and outputs">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../gpio/" class="btn btn-neutral float-right" title="Inputs and outputs">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../python/" class="btn btn-neutral" title="0 - Introduction to Python"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../python/" class="btn btn-neutral" title="Introduction to Python"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   

@@ -9,16 +9,17 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>4 - Wednesday - Designing and building - Mobile Robotics with micro:bit</title>
+  <title>Designing and building - Mobile Robotics with micro:bit</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
   <link rel="stylesheet" href="../css/theme_extra.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  <link href="../css/extra.css" rel="stylesheet" />
   
   <script>
     // Current page data
-    var mkdocs_page_name = "4 - Wednesday - Designing and building";
+    var mkdocs_page_name = "Designing and building";
     var mkdocs_page_input_path = "mecanics.md";
     var mkdocs_page_url = null;
   </script>
@@ -51,34 +52,45 @@
                     <li class="toctree-l1"><a class="reference internal" href="..">Welcome</a>
                     </li>
                 </ul>
+                <p class="caption"><span class="caption-text">Preperation</span></p>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../python/">0 - Introduction to Python</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../python/">Introduction to Python</a>
                     </li>
                 </ul>
+                <p class="caption"><span class="caption-text">Monday</span></p>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../microbit/">1 - Monday - Micro:bit board</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../microbit/">Micro:bit board</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../gpio/">Inputs and outputs</a>
                     </li>
                 </ul>
+                <p class="caption"><span class="caption-text">Tuesday</span></p>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../gpio/">2 - Monday - Inputs and outputs</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../robot/">Robotics and moving</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../radio/">Engineering and radio communication </a>
                     </li>
                 </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../robot/">3 - Tuesday - Robotics and moving</a>
-                    </li>
-                </ul>
+                <p class="caption"><span class="caption-text">Wednesday</span></p>
                 <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">4 - Wednesday - Designing and building</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Designing and building</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#introduction-to-making">Introduction to making</a>
+    <li class="toctree-l2"><a class="reference internal" href="#what-you-will-need">What you will need</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#cardbot">Cardbot</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#obstacle-avoiding-robot-design">Obstacle avoiding robot design</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#cad">CAD</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#conclusion">Conclusion</a>
     </li>
     </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../cad/">CAD</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Thursday</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../further/">Going further</a>
                     </li>
                 </ul>
                 <ul>
@@ -105,8 +117,12 @@
     <li><a href="..">Docs</a> &raquo;</li>
     
       
+        
+          <li>Wednesday &raquo;</li>
+        
+      
     
-    <li>4 - Wednesday - Designing and building</li>
+    <li>Designing and building</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -118,36 +134,80 @@
             <div class="section">
               
                 <h1 id="designing-a-robot">Designing a robot</h1>
+<p>In the previous days we learned how to control a robot, to make it move, to add sensors to its controller, but we did not yet manage to have what we could call an autonomous robot. Today you will learn how to make this possible.</p>
 <div class="admonition note">
 <p class="admonition-title">Question</p>
 <p>With everything you learned so far and the material at hand, do you think that you could put together an autonomous mobile robot that will explore it's surrounding while avoiding obstacles ?</p>
 </div>
-<h2 id="introduction-to-making">Introduction to making</h2>
+<details class="note"><summary>Answer</summary><p>Yes you might be able to. Indeed, while you can't connect the HC-SR04 and 2 motors on the buggy board, you can connect the ultrasonic sensor on one board and two motors on another board and make the two board communicate. The problem is that the robot frame of the buggy does not allow that. Today you'll learn how to start prototyping andd building your own frames to solve such problems.</p>
+</details>
+<h2 id="what-you-will-need">What you will need</h2>
+<p>Every pair of learners will need:</p>
+<ul>
+<li>A computer equipped with a connection to internet and a browser (ideally Chrome),</li>
+<li>One micro:bit,</li>
+<li>A usb cable to connect the micro:bit to the computer,</li>
+<li>One bit:buggy kit,</li>
+<li>Some cardboard,</li>
+<li>A ruler,</li>
+<li>A cutter.</li>
+</ul>
+<h2 id="cardbot">Cardbot</h2>
+<p>Why we'll use carboard ? Why we'll provide the first design?</p>
 <p>Build the cardboard buggy by following the instructions below:</p>
-<p><span style="color:red">Todo</span></p>
+<p><span style="color:red">Missing the space for the switch in my version</span></p>
+<table>
+<thead>
+<tr>
+<th align="center">Draw</th>
+<th align="center">Cut, dismantle the buggy and discard elements on left</th>
+<th align="center">Mount the wheels</th>
+<th align="center">Put half of the rivets in</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><img alt="" src="../cardbot/1.jpeg" /></td>
+<td align="center"><img alt="" src="../cardbot/2.jpeg" /></td>
+<td align="center"><img alt="" src="../cardbot/3.jpeg" /></td>
+<td align="center"><img alt="" src="../cardbot/4.jpeg" /></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th align="center">Mount the universal wheel</th>
+<th align="center">Mount the buggy board</th>
+<th align="center">Fold and mount the motors</th>
+<th align="center">Plug the motors and put the two parts together</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><img alt="" src="../cardbot/1.jpeg" /></td>
+<td align="center"><img alt="" src="../cardbot/2.jpeg" /></td>
+<td align="center"><img alt="" src="../cardbot/3.jpeg" /></td>
+<td align="center"><img alt="" src="../cardbot/4.jpeg" /></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p><strong>Figure:</strong> Mounting the cardbot.</p>
+</div>
+<p>Please put the discarded elements back in the buggy box, taking care of putting the screws back in their plastic bags.</p>
 <h2 id="obstacle-avoiding-robot-design">Obstacle avoiding robot design</h2>
+<p>In this activity you will take the time to propose your own design to solve the original problem which was to build an obstacle avoiding robot.</p>
 <div class="admonition note">
 <p class="admonition-title">Exercise 1</p>
 <ul>
 <li>1.1 Design (without building) a new frame for your robot to be able to explore its environment and detect obstacles.</li>
-<li>1.2 Choose among your design and the one proposed design which of the two you prefer annd build it.</li>
+<li>1.2 Choose among your design and the one proposed design which of the two you prefer and build it.</li>
 <li>1.3 Program the mobile robot to explore the space and avoid obstacles.</li>
 </ul>
 </div>
-<h2 id="cad">CAD</h2>
-<iframe width="725" height="453" src="https://www.tinkercad.com/embed/lSxLaav1kgy?editbtn=1" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
-
-<p>Now that you are more familiar to the parts and some mechanical constraints, you'll get further in the design process and get more professional. Imagine you don't have cardboard anymore to build from, but you are planning to get access to a fablab where you'll have the possibility to use acrylic sheets and a laser cuter.</p>
-<p>For this you'll learn how to use Tinkercad which is an easy-to-use 3D CAD design tool. You'll do this by first learning to do the 3D model shown above of a robot very similar to the one we used this week.</p>
-<div class="admonition note">
-<p class="admonition-title">Exercise 2</p>
-<ul>
-<li>2.1 Connect to the class session using the nickname that was provided to you (<span style="color:red">todo</span>).</li>
-<li>2.2 By following the instruction video here (<span style="color:red">todo</span>), learn the fundamental about computer aided design (CAD).</li>
-<li>2.3 To come.</li>
-</ul>
-</div>
 <h2 id="conclusion">Conclusion</h2>
+<p>This morning you learned how to design and build a robot frame with simple material. While there is a lot to learn in the field of mecanics, the theory is based on some strong fundations in physics and geometry. However, there si no need to get involved in the theory too hurly. You can already learn a lot of practical knowledge in doing what you did this morning, and this will only makes you learn the theory more easily later if you are interested in this field.</p>
               
             </div>
           </div>
@@ -155,10 +215,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../about/" class="btn btn-neutral float-right" title="Contacts">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../cad/" class="btn btn-neutral float-right" title="CAD">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../robot/" class="btn btn-neutral" title="3 - Tuesday - Robotics and moving"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../radio/" class="btn btn-neutral" title="Engineering and radio communication "><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -184,10 +244,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../robot/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../radio/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../about/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../cad/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
