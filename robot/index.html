@@ -9,16 +9,17 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>3 - Tuesday - Robotics and moving - Mobile Robotics with micro:bit</title>
+  <title>Robotics and moving - Mobile Robotics with micro:bit</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
   <link rel="stylesheet" href="../css/theme_extra.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  <link href="../css/extra.css" rel="stylesheet" />
   
   <script>
     // Current page data
-    var mkdocs_page_name = "3 - Tuesday - Robotics and moving";
+    var mkdocs_page_name = "Robotics and moving";
     var mkdocs_page_input_path = "robot.md";
     var mkdocs_page_url = null;
   </script>
@@ -51,36 +52,55 @@
                     <li class="toctree-l1"><a class="reference internal" href="..">Welcome</a>
                     </li>
                 </ul>
+                <p class="caption"><span class="caption-text">Preperation</span></p>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../python/">0 - Introduction to Python</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../python/">Introduction to Python</a>
                     </li>
                 </ul>
+                <p class="caption"><span class="caption-text">Monday</span></p>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../microbit/">1 - Monday - Micro:bit board</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../microbit/">Micro:bit board</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../gpio/">Inputs and outputs</a>
                     </li>
                 </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../gpio/">2 - Monday - Inputs and outputs</a>
-                    </li>
-                </ul>
+                <p class="caption"><span class="caption-text">Tuesday</span></p>
                 <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">3 - Tuesday - Robotics and moving</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Robotics and moving</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#what-you-will-need">What you will need</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#building-the-bigbuggy">Building the big:buggy</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#moving-basics">Moving basics</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#control-laws">Control laws</a>
+    <li class="toctree-l2"><a class="reference internal" href="#control-systems">Control systems</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#open-loop-and-closed-loop-systems">Open-loop and closed-loop systems</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#remote-communication">Remote communication</a>
+    <li class="toctree-l3"><a class="reference internal" href="#onoff-clontrol-law-on-the-buggy">On/off clontrol law on the buggy</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#propotional-control-law-on-the-buggy">Propotional control law on the buggy</a>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#conclusion">Conclusion</a>
     </li>
     </ul>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../radio/">Engineering and radio communication </a>
+                    </li>
                 </ul>
+                <p class="caption"><span class="caption-text">Wednesday</span></p>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../mecanics/">4 - Wednesday - Designing and building</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../mecanics/">Designing and building</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../cad/">CAD</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Thursday</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../further/">Going further</a>
                     </li>
                 </ul>
                 <ul>
@@ -107,8 +127,12 @@
     <li><a href="..">Docs</a> &raquo;</li>
     
       
+        
+          <li>Tuesday &raquo;</li>
+        
+      
     
-    <li>3 - Tuesday - Robotics and moving</li>
+    <li>Robotics and moving</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -119,8 +143,17 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="mobile-robotics-control">Mobile robotics - Control</h1>
-<p>Yesterday, you learned how to make a robot sense and how to make it act on its environment. But there was a big things missing to make the robot really move: a frame, a structure to hold all the parts together, we could say the bones of our mobile robot. Today we'll solve this problem: you'll build a frame, and following you will discover some standard mobile robotics problems and learn how to solve them.</p>
+                <h1 id="mobile-robotics-control-systems">Mobile robotics - Control systems</h1>
+<p>Yesterday, you learned how to make a robot sense and how to make it act on its environment. But there was a big things missing to make the robot really move: a frame, a structure to hold all the parts together, we could say the bones of our mobile robot. Today we'll solve this problem: you'll build a frame, and thanks to this frame you will discover some standard mobile robotics problems and learn how to solve them.</p>
+<h2 id="what-you-will-need">What you will need</h2>
+<p>Every pair of learners will need:</p>
+<ul>
+<li>A computer equipped with a connection to internet and a browser (ideally Chrome),</li>
+<li>One micro:bit,</li>
+<li>A usb cable to connect the micro:bit to the computer,</li>
+<li>One bit:buggy kit,</li>
+<li>A flat piece of cardboard.</li>
+</ul>
 <h2 id="building-the-bigbuggy">Building the big:buggy</h2>
 <table>
 <thead>
@@ -153,27 +186,39 @@
 <li>After step 6, when you plug the cables, remember you learned today: the black cable plugs onto G ! The picture of the instructions might be a bit misleading. By the way the cables are long (not like the picture), simply tuck them inside the robot frame and you are ready to roll.</li>
 </ul>
 <h2 id="moving-basics">Moving basics</h2>
-<p>Now that we've got some bones to hold our muscles, eyes and brain, it's time for you to remember what you learned today to do a simple program to make the buggy move.</p>
+<p>The robot has now some bones to hold together its muscles, eyes and brain, it's time for you to remember what you learned yesterday to do a simple program to make it move.</p>
 <div class="admonition note">
 <p class="admonition-title">Exercice 1</p>
 <ul>
-<li>1.1 Program micro:bit to move forward when the robot move forward when the button A is pressed and stop when B is pressed.</li>
+<li>1.1 Program micro:bit to move forward when the button A is pressed and stop when B is pressed.</li>
 <li>1.2 Rewrite your program to make it clean and reusable: define the functions <em>setLeftSpeed(v)</em> and <em>setRightSpeed(v)</em> for <em>v</em> in [-100, 100] so that to go straight at full speed we just have to call <em>setLeftSpeed(100)</em> and <em>setRightSpeed(100)</em>.</li>
-<li>1.3 Rewrite your program to make it even cleaner and reusable: define a function <em>goStraight(v)</em> that can be used to make the robot move forward (or stop) at the speed we want.</li>
+<li>1.3 Rewrite your program to make it even cleaner and reusable: define a function <em>goStraight(v)</em> that can be used to make the robot move forward (<em>v &gt; 0</em>) or backward (<em>v &lt; 0</em>) at the speed you want.</li>
 </ul>
 </div>
-<h2 id="control-laws">Control laws</h2>
+<h2 id="control-systems">Control systems</h2>
+<h3 id="open-loop-and-closed-loop-systems">Open-loop and closed-loop systems</h3>
+<p><img alt="" src="FeedbackLoopAC.png" /></p>
+<div class="admonition note">
+<p><strong>Figure:</strong> Closed-loop system of an heater AC.</p>
+</div>
+<p>In engineering there are two types of control systems. The first one is the open-loop system, also known as non-feedback system. It is the kind of systems that we used in the previous exercises: the outputs of those systems do not produce changes on thier inputs. Here is an analogy with an air conditioner/heater: an open loop system in this case would be a system with three buttons, heat, cool down and stop, and the user would have to press the button whenever he wishes the machine to do something different.</p>
+<p>The second type of control system is the closed-loop one. In this one, there is a feedback, from the outputs to the inputs. Coming back to the aircond/heater example, to use the previous machine in a closed-loop system, you'd have to equip it with a temperature sensor and a controller. One way to use such a system, could be to program the controller to activate the heater if the measured temperature is below a given value and activate the air conditioner if the temperature is above it. That's what many of us have in our houses (without the air conditioner). In that case, the action of the heater would influence the temperature and therefore its measure. There is a feedback from the actuator of the machine to its input. </p>
+<h3 id="onoff-clontrol-law-on-the-buggy">On/off clontrol law on the buggy</h3>
+<p>In this activity, you will learn how to program a closed-loop system using two different control laws. To do so you will use one more sensor which is integrated in the micro:bit that you did not use yet: its accelerometer. You will put the buggy on a slope and you will need to use a closed-control loop to avoid it flipping on the side. To know if the buggy is about to flip, you will need to look into the information that the accelerometer gives. </p>
+<div class="admonition note">
+<p class="admonition-title">Question</p>
+<p>Using the documentation of the accelerometer <a href="https://microbit-challenges.readthedocs.io/en/latest/tutorials/accelerometer.html">here</a> find which of its axis informs us about the sideway (roll) inclination of the buggy.</p>
+</div>
+<p>Depending on this information, we can program the robot to turn left or right to face towards the top of the slope as presented in the figure below. Notice the feedback loop: turning has a direct effect on the roll and, as a result on the measure of the accelerometer. </p>
 <table>
 <thead>
 <tr>
-<th align="center">Pitch</th>
 <th align="center">Roll</th>
 <th align="center">Roll</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center"><img alt="" src="slope/Pitch.png" /></td>
 <td align="center"><img alt="" src="slope/Roll1.png" /></td>
 <td align="center"><img alt="" src="slope/Roll2.png" /></td>
 </tr>
@@ -182,28 +227,48 @@
 <div class="admonition note">
 <p><strong>Figure:</strong> The buggy moves along the steepest ascent.</p>
 </div>
-<p>Exercise: program the buggy to always follow the steepest ascent using the <em>x</em> and <em>z</em> axes of the accelerometer. A tutorial with useful information about the accelerometer can be found <a href="https://microbit-challenges.readthedocs.io/en/latest/tutorials/accelerometer.html">here</a>.</p>
 <div class="admonition note">
-<p class="admonition-title">Exercice 2</p>
-<p>ON/OFF control law. </p>
-</div>
-<p>Some explaination about proportional control laws.</p>
-<div class="admonition note">
-<p class="admonition-title">Exercice 3</p>
-<p>Proportional control law. Focus on problem decomposition: first one dimension, then second, then join them.</p>
-</div>
-<h2 id="remote-communication">Remote communication</h2>
-<p>Discovering the radio emettor and receptor. </p>
-<div class="admonition note">
-<p class="admonition-title">Exercice 4</p>
+<p class="admonition-title">Exercise 2</p>
 <ul>
-<li>4.1 Control the buggy from another micro:bit by tilting it. Again focus on problem decomposition.</li>
-<li>4.2 Optional 1: Control the buggy using another micro:bit equipped with two potentiometers (remove the batteries if you do so to make sure you don't give 5V to micro:bit and burn it). One potentiometer for the forward/backward speed, the other for turning (like on many RC vehicles)</li>
-<li>4.3 Optional 2 (hard): Program the buggy to always come back to the orientation it started with. For this you'll need to use it's internal compas which is quite a special sensor.</li>
+<li>2.1. Using <em>display.scroll()</em>, display the measure of the acceleration along the chosen axis. Tilt the buggy by holding it in your hands. What are the minimum values returned by the function <em>accelerometer.get_.()</em> ? What physical measure does that corresponds to ?</li>
+<li>2.2. In the loop of the controller, define a variable <em>error</em> in which you will store the error between the desired acceleration along the chosen axis and its actual measure.</li>
+<li>2.3. Program the buggy to move as described in the image above so that if the roll is over a certain threshold it turns towards the slope (which will reduce its roll). Test your program by putting the buggy on a piece of cardboard so that you can change the slope.</li>
 </ul>
 </div>
+<h3 id="propotional-control-law-on-the-buggy">Propotional control law on the buggy</h3>
+<table>
+<thead>
+<tr>
+<th align="center">On/Off</th>
+<th align="center">Proportional</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><img alt="" src="OnOff.png" /></td>
+<td align="center"><img alt="" src="Proportional.png" /></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p><strong>Figure:</strong> Evolution of the error with respect to time for both control laws.</p>
+</div>
+<p>Coming back to our heating analogy, the previous control law would correspond to this: the user set a desired temperature or temperature range which is acceptable, if the measured temperature is lower than this the heating will be activated automatically, if the temperature is higher the air conditioning will be activated. The problem with such a strategy (called an on/off control law) is that if the temperature is much lower than what is acceptable, if we could, we would prefer the heater to work much harder than if we were close to the desired temperature. This alternative is called a proportional control law.</p>
+<p>As we are able to control how fast our robot turns, it is possible to set the turning speed so that the more the robot is tilted on the side, the faster it will turn.</p>
+<div class="admonition note">
+<p class="admonition-title">Exercice 3</p>
+<ul>
+<li>3.1. Use the error defined in the previous exercise to control the turning speed of the robot using a proportional control law. Test your program.</li>
+<li>3.2. (Optional) Change you program slighly so that when the buggy is flat it stops and when ts pitch increases it goes forward faster and faster.</li>
+<li>3.3. (Optional) Combine the exercises 3.1 and 3.2 to make the buggy move toward the top of the slope it is on.</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Question</p>
+<p>Is the error ever converging to zero ? If not why could that be ?</p>
+</div>
 <h2 id="conclusion">Conclusion</h2>
-<p>Remainder of lessons learned.</p>
+<p>Control systems are everywhere. We have more and more robots around us because they do what we want them to do but also because they can easily make things as we want them to be, and this is thanks to control systems and control laws. While the proportional control law that you programmed this morning is a must in mobile robotics, we often need to go beyond that. As you probybly noticed, the error can not converge to zero with such a simple control law. To really make it converge to zero we need more complex laws, namely PID, standing for <strong>Proportional-Integral-Derivative</strong>. If you ever wondered why you are studying integrals and derivatives, have a look at PIDs (<a href="https://link.springer.com/chapter/10.1007/978-3-319-62533-1_6">here</a> is a great ressource) and you'll find one reason to do so.</p>
               
             </div>
           </div>
@@ -211,10 +276,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../mecanics/" class="btn btn-neutral float-right" title="4 - Wednesday - Designing and building">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../radio/" class="btn btn-neutral float-right" title="Engineering and radio communication ">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../gpio/" class="btn btn-neutral" title="2 - Monday - Inputs and outputs"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../gpio/" class="btn btn-neutral" title="Inputs and outputs"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -243,7 +308,7 @@
         <span><a href="../gpio/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../mecanics/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../radio/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
