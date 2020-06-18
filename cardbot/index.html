@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Cad - Mobile Robotics with micro:bit</title>
+  <title>Cardbot - Mobile Robotics with micro:bit</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -19,8 +19,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Cad";
-    var mkdocs_page_input_path = "cad.md";
+    var mkdocs_page_name = "Cardbot";
+    var mkdocs_page_input_path = "cardbot.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -81,7 +81,7 @@
     
       
     
-    <li>Cad</li>
+    <li>Cardbot</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -92,57 +92,81 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="computer-aided-design-cad">Computer-aided design (CAD)</h1>
-<p>While this morning you learned a great way to get familiar with standard mecanical problems of robotics and an easy way to prototype a design, you will often want and need to build something clean. For this you could learn machining, but you could instead learn to do the same with the help of computers which is what you'll do this afternoon.</p>
+                <h1 id="designing-a-robot">Designing a robot</h1>
+<p>In the previous days we learned how to control a robot, to make it move, to add sensors to its controller, but we did not yet manage to have what we could call an autonomous robot. Today you will learn how to make this possible.</p>
+<div class="admonition note">
+<p class="admonition-title">Question</p>
+<p>With everything you learned so far and the material at hand, do you think that you could put together an autonomous mobile robot that will explore it's surrounding while avoiding obstacles ?</p>
+</div>
+<details class="note"><summary>Answer</summary><p>Yes you might be able to. Indeed, while you can't connect the HC-SR04 and 2 motors on the buggy board, you can connect the ultrasonic sensor on one board and two motors on another board and make the two board communicate. The problem is that the robot frame of the buggy does not allow that. Today you'll learn how to start prototyping andd building your own frames to solve such problems.</p>
+</details>
+<h2 id="what-you-will-need">What you will need</h2>
+<p>Every pair of learners will need:</p>
+<ul>
+<li>A computer equipped with a connection to internet and a browser (ideally Chrome),</li>
+<li>One micro:bit,</li>
+<li>A usb cable to connect the micro:bit to the computer,</li>
+<li>One bit:buggy kit,</li>
+<li>Some cardboard,</li>
+<li>A ruler,</li>
+<li>A cutter.</li>
+</ul>
+<h2 id="cardbot">Cardbot</h2>
+<p>Why we'll use carboard ? Why we'll provide the first design?</p>
+<p>Build the cardboard buggy by following the instructions below:</p>
+<p><span style="color:red">Missing the space for the switch in my version</span></p>
 <table>
 <thead>
 <tr>
-<th align="center">Drawing</th>
-<th align="center">Cutting</th>
-<th align="center">Cutted parts</th>
-<th align="center">Mounting</th>
+<th align="center">Draw</th>
+<th align="center">Cut, dismantle the buggy and discard elements on left</th>
+<th align="center">Mount the wheels</th>
+<th align="center">Put half of the rivets in</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center"><img alt="" src="CADing.png" /></td>
-<td align="center"><img alt="" src="Cutting.jpeg" /></td>
-<td align="center"><img alt="" src="Parts.jpeg" /></td>
-<td align="center"><img alt="" src="Done.png" /></td>
+<td align="center"><img alt="" src="1.jpeg" /></td>
+<td align="center"><img alt="" src="2.jpeg" /></td>
+<td align="center"><img alt="" src="3.jpeg" /></td>
+<td align="center"><img alt="" src="4.jpeg" /></td>
 </tr>
 </tbody>
 </table>
-<p>To build a frame using computers, the process consists of two phases: first, designing using a CAD software, second, building using a machine that accepts to take as input your CAD. Today you'll learn how to do the first phase using an online software called Tinkercad. You'll do this with the goal to eventually cut your model in 3mm thick sheets of plexiglass using a laser cutter as shown in the picture above (you can get access to those in fablabs which are becoming more and more common in Switzerland). Starting with laser cutting has the advantage of being very similar to the cardboard you used this morning in terms of mecanics.</p>
-<h2 id="what-you-will-need">What you will need</h2>
-<p>Every pair of learners will need:</p>
+<table>
+<thead>
+<tr>
+<th align="center">Mount the universal wheel</th>
+<th align="center">Mount the buggy board</th>
+<th align="center">Fold and mount the motors</th>
+<th align="center">Plug the motors and put the two parts together</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><img alt="" src="1.jpeg" /></td>
+<td align="center"><img alt="" src="2.jpeg" /></td>
+<td align="center"><img alt="" src="3.jpeg" /></td>
+<td align="center"><img alt="" src="4.jpeg" /></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p><strong>Figure:</strong> Mounting the cardbot.</p>
+</div>
+<p>Please put the discarded elements back in the buggy box, taking care of putting the screws back in their plastic bags.</p>
+<h2 id="obstacle-avoiding-robot-design">Obstacle avoiding robot design</h2>
+<p>In this activity you will take the time to propose your own design to solve the original problem which was to build an obstacle avoiding robot.</p>
+<div class="admonition note">
+<p class="admonition-title">Exercise 1</p>
 <ul>
-<li>A computer equipped with a connection to internet and a browser.</li>
+<li>1.1 Design (without building) a new frame for your robot to be able to explore its environment and detect obstacles.</li>
+<li>1.2 Choose among your design and the one proposed design which of the two you prefer and build it.</li>
+<li>1.3 Program the mobile robot to explore the space and avoid obstacles.</li>
 </ul>
-<h2 id="introduction-to-tinkercad">Introduction to Tinkercad</h2>
-<iframe width="725" height="453" src="https://www.tinkercad.com/embed/lSxLaav1kgy?editbtn=1" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
-
-<p>In this activity, you will learn the basics of CAD designing by reproducing the 3D model shown above of a robot very similar to the one we used this week.
-For this, go onto this <a href="https://www.tinkercad.com/joinclass/1XX54IC3GPYT">virtual classroom</a>. This will allow you to access tinkercad using only a nickname that your teacher will give you. That will also allow us to follow your progress and help you if you need.</p>
-<p>Then follow the instruction videos here (<span style="color:red">todo</span>).</p>
-<p>Video 1:</p>
-<ul>
-<li>Connect to the class with your nickname</li>
-<li>create a new empty design</li>
-<li>add an object</li>
-<li>changing the point of view</li>
-<li>changing the size</li>
-<li>move the object in space</li>
-<li>join two objects together</li>
-<li>make an object as a hole and substract it from another object</li>
-</ul>
-<p>Video 2:</p>
-<ul>
-<li>import the <a href="https://www.tinkercad.com/things/7l9L6bBJv7j">Parts</a></li>
-<li>do a simple version of the buggy</li>
-</ul>
-<h2 id="project">Project</h2>
-<p>The project will be given to you during the week.</p>
+</div>
 <h2 id="conclusion">Conclusion</h2>
+<p>This morning you learned how to design and build a robot frame with simple material. While there is a lot to learn in the field of mecanics, the theory is based on some strong fundations in physics and geometry. However, there si no need to get involved in the theory too hurly. You can already learn a lot of practical knowledge in doing what you did this morning, and this will only makes you learn the theory more easily later if you are interested in this field.</p>
               
             </div>
           </div>
