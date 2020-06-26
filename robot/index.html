@@ -103,7 +103,7 @@
 <li>One bit:buggy kit,</li>
 <li>A flat piece of cardboard.</li>
 </ul>
-<h2 id="building-the-bigbuggy">Building the big:buggy</h2>
+<h2 id="building-the-bitbuggy">Building the Bit:Buggy</h2>
 <table>
 <thead>
 <tr>
@@ -123,25 +123,26 @@
 </tbody>
 </table>
 <div class="admonition note">
-<p><strong>Figure:</strong> Building the bit:buggy.</p>
+<p><strong>Figure:</strong> Building the Bit:Buggy.</p>
 </div>
 <p>To build the robot, I invite you to follow the instructions provided in the Bit:Buggy isntruction manual. However this manual is missing some valuable information:</p>
 <ul>
-<li>Before starting identify the two bags that come along with the servo motors (in them there should screws and several servo horns, that is white plastic pieces to put on the servos). Those pieces won't be of any use and are not listed in the component list of the bit:buggy car, so put them aside.</li>
+<li>Before starting identify the two bags that come along with the servo motors (in them there should be screws and several servo horns, that are white plastic pieces to put on the servos). Those pieces won't be of any use and are not listed in the component list of the bit:buggy car, so put them aside.</li>
 <li>In step 1. pay attention to the wheels: their two sides are differents, only one side can plug onto the motor end. Also, when screwing the wheel onto the motor, hold the wheel (if you don't you could make the motor turn using the screws and that might damage the motor).</li>
 <li>In step 3. make the cables of the motors stick upward. Moreover you have to push through to really get the plastic parts completely in one another.</li>
-<li>In step 4. be delicate with the screw. You should not have to force. If it's hard to screw it in, it's probably that the alignment is ot correct. If it is, unscrew first, correct the alignment and try screwing again.</li>
+<li>In step 4. be delicate with the screw. You should not have to force. If it's hard to screw it in, it's probably that the alignment is not correct. If it is, unscrew first, correct the alignment and try screwing again.</li>
 <li>Before step 6 put the batteries in if it is not yet in, and turn off the board with the switch.</li>
-<li>After step 6, when you plug the cables, remember you learned today: the black cable plugs onto G ! The picture of the instructions might be a bit misleading. By the way the cables are long (not like the picture), simply tuck them inside the robot frame and you are ready to roll.</li>
+<li>After step 6, when you plug the cables, remember what you learned previously: the black cable plugs onto G ! The picture of the instructions might be a bit misleading. By the way the cables are long (not like the picture), simply tuck them inside the robot frame and you are ready to roll.</li>
 </ul>
 <h2 id="moving-basics">Moving basics</h2>
 <p>The robot has now some bones to hold together its muscles, eyes and brain, it's time for you to remember what you learned yesterday to do a simple program to make it move.</p>
 <div class="admonition note">
-<p class="admonition-title">Exercice 1</p>
+<p class="admonition-title">Exercise 1</p>
 <ul>
 <li>1.1 Program micro:bit to move forward when the button A is pressed and stop when B is pressed.</li>
 <li>1.2 Rewrite your program to make it clean and reusable: define the functions <em>setLeftSpeed(v)</em> and <em>setRightSpeed(v)</em> for <em>v</em> in [-100, 100] so that to go straight at full speed we just have to call <em>setLeftSpeed(100)</em> and <em>setRightSpeed(100)</em>.</li>
-<li>1.3 Rewrite your program to make it even cleaner and reusable: define a function <em>goStraight(v)</em> that can be used to make the robot move forward (<em>v &gt; 0</em>) or backward (<em>v &lt; 0</em>) at the speed you want.</li>
+<li>1.4 Change the functions <em>setLeftSpeed()</em> and <em>setRightSpeed()</em> so that <em>setLeftSpeed(v)</em> does the same thing as <em>setLeftSpeed(100)</em> for <em>v&gt;100</em> and <em>setLeftSpeed(-100)</em> for <em>v&lt;-100</em>.</li>
+<li>1.4 Rewrite your program to make it even cleaner and reusable: define a function <em>goStraight(v)</em> that can be used to make the robot move forward (<em>v &gt; 0</em>) or backward (<em>v &lt; 0</em>) at the speed you want.</li>
 </ul>
 </div>
 <h2 id="control-systems">Control systems</h2>
@@ -150,7 +151,7 @@
 <div class="admonition note">
 <p><strong>Figure:</strong> Closed-loop system of an heater AC.</p>
 </div>
-<p>In engineering there are two types of control systems. The first one is the open-loop system, also known as non-feedback system. It is the kind of systems that we used in the previous exercises: the outputs of those systems do not produce changes on thier inputs. Here is an analogy with an air conditioner/heater: an open loop system in this case would be a system with three buttons, heat, cool down and stop, and the user would have to press the button whenever he wishes the machine to do something different.</p>
+<p>In engineering there are two types of control systems. The first one is the open-loop system, also known as non-feedback system. It is the kind of systems that we used in the previous exercises: the outputs of those systems do not produce changes on their inputs. Here is an analogy with an air conditioner/heater: an open loop system in this case would be a system with three buttons, heat, cool down and stop, and the user would have to press the button whenever he wishes the machine to do something different.</p>
 <p>The second type of control system is the closed-loop one. In this one, there is a feedback, from the outputs to the inputs. Coming back to the aircond/heater example, to use the previous machine in a closed-loop system, you'd have to equip it with a temperature sensor and a controller. One way to use such a system, could be to program the controller to activate the heater if the measured temperature is below a given value and activate the air conditioner if the temperature is above it. That's what many of us have in our houses (without the air conditioner). In that case, the action of the heater would influence the temperature and therefore its measure. There is a feedback from the actuator of the machine to its input. </p>
 <h3 id="onoff-clontrol-law-on-the-buggy">On/off clontrol law on the buggy</h3>
 <p>In this activity, you will learn how to program a closed-loop system using two different control laws. To do so you will use one more sensor which is integrated in the micro:bit that you did not use yet: its accelerometer. You will put the buggy on a slope and you will need to use a closed-control loop to avoid it flipping on the side. To know if the buggy is about to flip, you will need to look into the information that the accelerometer gives. </p>
@@ -179,9 +180,9 @@
 <div class="admonition note">
 <p class="admonition-title">Exercise 2</p>
 <ul>
-<li>2.1. Using <em>display.scroll()</em>, display the measure of the acceleration along the chosen axis. Tilt the buggy by holding it in your hands. What are the minimum values returned by the function <em>accelerometer.get_.()</em> ? What physical measure does that corresponds to ?</li>
-<li>2.2. In the loop of the controller, define a variable <em>error</em> in which you will store the error between the desired acceleration along the chosen axis and its actual measure.</li>
-<li>2.3. Program the buggy to move as described in the image above so that if the roll is over a certain threshold it turns towards the slope (which will reduce its roll). Test your program by putting the buggy on a piece of cardboard so that you can change the slope.</li>
+<li>2.1. Using <em>display.scroll()</em>, display the measure of the acceleration along the chosen axis. Tilt the buggy by holding it in your hands. What are the minimum values returned by the function <em>accelerometer.get_.()</em> ? What physical measure does that corresponds to ? What is the acceleration measure corresponding to no slope?</li>
+<li>2.2. In the loop of the controller, define a variable <em>error</em> in which you will store the error between the desired measure along the chosen axis and its actual measure.</li>
+<li>2.3. Program the buggy to move as described in the image above so that if the roll is over a certain threshold it turns towards the slope (which will reduce its roll) at 50% full speed. Test your program by putting the buggy on a piece of cardboard so that you can change the slope.</li>
 </ul>
 </div>
 <h3 id="propotional-control-law-on-the-buggy">Propotional control law on the buggy</h3>
@@ -202,12 +203,12 @@
 <div class="admonition note">
 <p><strong>Figure:</strong> Evolution of the error with respect to time for both control laws.</p>
 </div>
-<p>Coming back to our heating analogy, the previous control law would correspond to this: the user set a desired temperature or temperature range which is acceptable, if the measured temperature is lower than this the heating will be activated automatically, if the temperature is higher the air conditioning will be activated. The problem with such a strategy (called an on/off control law) is that if the temperature is much lower than what is acceptable, if we could, we would prefer the heater to work much harder than if we were close to the desired temperature. This alternative is called a proportional control law.</p>
+<p>Coming back to our heating analogy, the previous control law would correspond to this: the user sets a desired temperature or temperature range which is acceptable, if the measured temperature is lower than this the heating will be activated automatically, if the temperature is higher the air conditioning will be activated. The problem with such a strategy (called an on/off control law) is that if the temperature is much lower than what is acceptable, if we could, we would prefer the heater to work much harder than if we were close to the desired temperature. This alternative is called a proportional control law.</p>
 <p>As we are able to control how fast our robot turns, it is possible to set the turning speed so that the more the robot is tilted on the side, the faster it will turn.</p>
 <div class="admonition note">
-<p class="admonition-title">Exercice 3</p>
+<p class="admonition-title">Exercise 3</p>
 <ul>
-<li>3.1. Use the error defined in the previous exercise to control the turning speed of the robot using a proportional control law. Test your program.</li>
+<li>3.1. Use the error defined in the previous exercise to control the turning speed of the robot using a proportional control law. Warning, you will need to scale the error. Test your program.</li>
 <li>3.2. (Optional) Change you program slighly so that when the buggy is flat it stops and when ts pitch increases it goes forward faster and faster.</li>
 <li>3.3. (Optional) Combine the exercises 3.1 and 3.2 to make the buggy move toward the top of the slope it is on.</li>
 </ul>
@@ -217,7 +218,7 @@
 <p>Is the error ever converging to zero ? If not why could that be ?</p>
 </div>
 <h2 id="conclusion">Conclusion</h2>
-<p>Control systems are everywhere. We have more and more robots around us because they do what we want them to do but also because they can easily make things as we want them to be, and this is thanks to control systems and control laws. While the proportional control law that you programmed this morning is a must in mobile robotics, we often need to go beyond that. As you probybly noticed, the error can not converge to zero with such a simple control law. To really make it converge to zero we need more complex laws, namely PID, standing for <strong>Proportional-Integral-Derivative</strong>. If you ever wondered why you are studying integrals and derivatives, have a look at PIDs (<a href="https://link.springer.com/chapter/10.1007/978-3-319-62533-1_6">here</a> is a great ressource) and you'll find one reason to do so.</p>
+<p>Control systems are everywhere. We have more and more robots around us because they do what we want them to do but also because they can easily make things as we want them to be, and this is thanks to control systems and control laws. While the proportional control law that you programmed this morning is a must in mobile robotics, we often need to go beyond that. As you probably noticed, the error can not converge to zero with such a simple control law. To really make it converge to zero we need more complex laws, namely PID, standing for <strong>Proportional-Integral-Derivative</strong>. If you ever wondered why you are studying integrals and derivatives, have a look at PIDs (<a href="https://link.springer.com/chapter/10.1007/978-3-319-62533-1_6">here</a> is a great ressource) and you'll find one reason to do so.</p>
               
             </div>
           </div>
