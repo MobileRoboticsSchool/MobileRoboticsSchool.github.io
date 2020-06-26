@@ -129,7 +129,7 @@
 <h2 id="gpio">GPIO</h2>
 <p>Look at the micro:bit. On its bottom there is a strange set of golden lines (it's not gold, don't start to rip it appart and try selling it!). Those are conductive connectors that will allow you to connect more sensors and actuators to it and interact with them. They are what we call inputs and outputs or GPIO (general purpose input/ouputs) which are standards in the world of microcontrollers. Each connector is called a <em>pin</em>, and most of them can be used as input or output. The micro:bit has about 20 of them in total (more information <a href="https://microbit-micropython.readthedocs.io/en/latest/pin.html">here</a>).</p>
 <h2 id="adding-a-simple-sensor">Adding a simple sensor</h2>
-<p>The first sensor you will add is called a potentiometer. For this you will use one pin as a input. You'll learn how to capture the position of the potentiometer in our program. </p>
+<p>The first sensor you will add is called a potentiometer. For this you will use one pin as an input. You'll learn how to capture the position of the potentiometer in our program. </p>
 <p>Before doing any programming, you will have to take care of the physical connection between the potentiometer and the micro:bit. <strong>Begin by disconnecting the micro:bit from the computer. Before doing any changes in the wiring of a controller, always power it off !</strong></p>
 <p>Then, screw the micro:bit on the bit:buggy mainboard using 5 screws (see figures below). This will give you access to pin0, pin1, pin2, 3.3V and Ground through femelle pin headers on the back of the buggy board. In this activity, you will use the pins pin0 (0), 3.3V (V) and ground (G). Connect the wires as shown in the image below (the colors are not important although we usually try to put a black cable for ground and a red one for power sources).</p>
 <table>
@@ -152,14 +152,14 @@
 <p>In this montage, the potentiometer will ouput through S (for signal) a portion of the input voltage (3.3V) depending on the position of the knob. </p>
 <p>To access the information of the pins in python, the microbit library defines for us the objects <em>pin0</em>, <em>pin1</em>, etc... Those objects come with two useful functions: <em>read_analog()</em> or <em>read_digital()</em> (see <a href="https://microbit-micropython.readthedocs.io/en/latest/pin.html">doc here</a>). If we are interested in getting a binary information (is the voltage on the pin high or low?), we use <em>read_digital()</em>. That's what we'd use for a button (pressed or not). If we want more we have to use the function <em>read_analog()</em>. This is our case as we want to know the position of the knob, therefore, we want to know which portion of 3.3V is on pin0. </p>
 <div class="admonition note">
-<p class="admonition-title">Exercice 1</p>
+<p class="admonition-title">exercise 1</p>
 <ul>
 <li>1.1. <em>pin0.read_analog()</em> returns an integer. Program micro:bit to display the value returned by this function using the function display.scroll() every 100 ms. Turn the knob to find what is the range of values that pin0.read_analog() can return. Can you display the value every 100 ms ?</li>
 <li>1.2. Use the function <em>displayPositiveNumber(n)</em> defined this morning to display the position of the knob every 100 ms. Remember that this function works well only for arguments in [0-25], so you'll need to do some scaling in between.</li>
 <li>1.3. (Optional) If you are not comfortable with linear mapping (rescaling in our case), you could later take the time to define a function to do that for you so that <em>map(n, n_min,n_max,res_min,res_max) = res_min + n.(res_max-res_min)/(n_max-n_min)</em>.</li>
 </ul>
 </div>
-<details class="note"><summary>Solution exercice 1.1</summary><p>The value returned by <em>read_analog()</em> is not in any physical unit. It's just a number encoded in 10 bits, meaning that it's value can go theoretically from 0 to 1024. However, this corresponds to the measure of a voltage on pin0 that can go from 0 to 3.3V (and should never go above 3.3V !).</p>
+<details class="note"><summary>Solution exercise 1.1</summary><p>The value returned by <em>read_analog()</em> is not in any physical unit. It's just a number encoded in 10 bits, meaning that it's value can go theoretically from 0 to 1024. However, this corresponds to the measure of a voltage on pin0 that can go from 0 to 3.3V (and should never go above 3.3V !).</p>
 </details>
 <p>While there exist many kinds of sensors, many of them work in a similar fashion as the potentiometer. A sensor will often require a power source (3.3Volts and ground), and it will output a signal. </p>
 <h2 id="controlling-a-motor">Controlling a motor</h2>
@@ -168,21 +168,22 @@
 <div class="admonition note">
 <p><strong>Figure:</strong> Connecting the servo motor to the micro:bit. </p>
 </div>
-<p>There are many kinds of motor. We will come back to this later. The one you'll use now is called a continuous servo motor. While the way it works will likely seem a bit obscure, it is a great choice to start with as it is very easy to control as they require no extra components.</p>
-<p>If you are just interested in making the motor turn, skip this paragraph. For the others, here is a little theory: Servo motors are controlled using pulse width modulation (PWM). PWMs are signals made out of regular high voltage pulses with varying width. The motor will measure the width of the pulses and will turn depending on it. In our case, to control the servo motor, we need to send a high pulse every 10 milliseconds. The width of the pulse needs to be 5% to 25% the period of the pulse (0.5ms to 2.5ms long) to be taken into account by the motor. More about PWMs <a href="https://microbit-micropython.readthedocs.io/en/latest/pin.html">here</a> and to more about continuous servo motors <a href="https://learn.adafruit.com/adafruit-motor-selection-guide/continuous-rotation-servos">here</a>.</p>
+<p>There are many kinds of motor. We will come back to this later. The one you'll use now is called a continuous servo motor. While the way it works will likely seem a bit obscure, it is a great choice to start with as it is very easy to control as it requires no extra components.</p>
+<p>If you are just interested in making the motor turn, skip this paragraph. For the others, here is a little theory: Servo motors are controlled using pulse width modulation (PWM). PWMs are signals made out of regular high voltage pulses with varying width. The motor will measure the width of the pulses and will turn depending on it. In our case, to control the servo motor, we need to send a high pulse every 10 milliseconds. The width of the pulse needs to be 5% to 25% the period of the pulse (0.5ms to 2.5ms long) to be taken into account by the motor. More about PWMs <a href="https://microbit-micropython.readthedocs.io/en/latest/pin.html">here</a> and more about continuous servo motors <a href="https://learn.adafruit.com/adafruit-motor-selection-guide/continuous-rotation-servos">here</a>.</p>
 <p>Practically, to control the motor you will need to have pin1 output a high pulse with a 10 ms period. As the <a href="https://microbit-micropython.readthedocs.io/en/latest/pin.html">documentation</a> explains, to do so we can use the instruction <em>pin1.set_analog_period(10)</em>. To change its speed you will have to use the function <em>pin1.write_analog(d)</em> with <em>d</em> in [50-250]. </p>
 <div class="admonition note">
-<p class="admonition-title">Exercice 2</p>
+<p class="admonition-title">exercise 2</p>
 <ul>
-<li>2.1. Program the micro:bit to make the robot turn. Try different values for <em>d</em> to make it turn at different speeds. What argument do you need to give to <em>the write_analog()</em> function to make the motor stop ? Does the function <em>pin1.set_analog_period(10)</em> need to be in the loop ?</li>
+<li>2.1. Program the micro:bit to make the motor turn. Try different values for <em>d</em> to make it turn at different speeds. What argument do you need to give to <em>the write_analog()</em> function to make the motor stop ? Does the function <em>pin1.set_analog_period(10)</em> need to be in the loop ?</li>
 <li>2.2. Program the micro:bit so that you can control the speed of the motor by turning the potentiometer.</li>
+<li>2.3. (Optional) Add a second motor and program the micro:bit so that you can set the speed of both motors independently using the buttons and potentiometer. Before programming, imagine how your idea would feel for the user to make it as user friendly as possible.</li>
 </ul>
 </div>
 <p>Notice that the motor is quite similar to the potentiometer in terms of wiring: it needs a power supply (3.3V and ground) and a signal, except that this time the signal is going from the micro:bit to the motor. This applies to many actuators.</p>
 <h2 id="measuring-a-distance">Measuring a distance</h2>
 <p>The last component you will learn to interface today is the HC-SR04. The HC-SR04, while it is commonly called an "ultrasonic distance sensor" is both a sensor and an actuator. It sends an ultrasound signal when the controllers orders it to do so and it informs the controller when it receives an echo. Thanks to the time between emission and reception and a bit of physics (<em>distance = time * velocity</em>) we can estimate the distance of obstacles facing the sensor.</p>
 <p>Do the montage shown in the pictures below. <strong>Add the batteries only once you double checked the montage</strong>. 
-This montage is more complex than the previous ones and here is why: </p>
+This montage is more complex than the previous ones and here is the reason why: </p>
 <ul>
 <li>The HC-SR04 needs about 5V of power and by adding the batteries the V pins of the buggy board go up from 3.3V to about 5V (more 3x1.5V in reality). </li>
 <li>The HC-SR04 sends an echo of 5V which if plugged directly to micro:bit could burn it. The montage <strong>with the potentiometer set at its mid-position</strong> allows to solve this problem<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>.</li>
@@ -213,6 +214,7 @@ import utime
 
 pinTrig = pin0
 pinEcho = pin1
+pinEcho.set_pull(pinEcho.NO_PULL) # some electronics that we can't explain you now
 
 def get_dist_in_cm():
     # send a high pulse to the trigger of HC-SR04
@@ -231,11 +233,12 @@ def get_dist_in_cm():
 </code></pre>
 
 <div class="admonition note">
-<p class="admonition-title">Exercice 3</p>
+<p class="admonition-title">exercise 3</p>
 <ul>
 <li>3.1. Read the code to verify if it matches the sensor specifications that we defined previously. Will this work if I call the function <em>get_dist_in_cm()</em> ?</li>
 <li>3.2. It won't work ! There is something missing: <em>Constant</em> is not defined and that's because I want you to find it now using the laws of physics.</li>
-<li>3.3. Once you found the value of <em>Constant</em>, write a program to display the distance on the LED matrix using the function <em>displayPositiveNumber(n)</em>. Don't forget to turn the switch of the buggy board on to test your program. When the switch is on you can actually unplug the usb cable and the circuit should continue working without the computer.</li>
+<li>3.3. Once you found the value of <em>Constant</em>, write a program to display the distance on the LED matrix using the function <em>display.scroll()</em>.  What is the range of distance the sensor can perceive ? Don't forget to turn the switch of the buggy board on to test your program. When the switch is on you can actually unplug the usb cable and the circuit should continue working without the computer.</li>
+<li>3.4. Display the distance on the LED matrix using the function <em>displayPositiveNumber(n)</em>. </li>
 </ul>
 </div>
 <h2 id="disco-light-optional">Disco light (optional)</h2>
@@ -256,19 +259,19 @@ np.show()
 </code></pre>
 
 <div class="admonition note">
-<p class="admonition-title">Exercice 4</p>
+<p class="admonition-title">exercise 4</p>
 <p>Connect the neopixel and the potentiometer to the micro.bit. Program the micro:bit to change the colors of the LEDs with the sensors at your disposition, making it as user friendly as possible.</p>
 </div>
 <h2 id="conclusion">Conclusion</h2>
 <p>That's it for today. Turn the buggy mainboard off using it's switch to save the batteries for the coming days and unplug everything putting all the components back to their respective boxes.</p>
-<p>With what you've learned today, you've got all the electronics tools you need to make an autonomous robot. While this morning you learned to interact with the controller of a robot, now you know how to give it eyes and muscles. Moreover while your familiarity with the use of functions is growing, reusing the work we did today will get easier and easier. The the function <em>displayPositiveNumber(n)</em> made our work easier this afternoon to get a quick feedback from our sensors. All the work we did with the motor and the distance sensor this afternoon will make our work easier in the coming days. </p>
+<p>With what you've learned today, you've got all the electronics tools you need to make an autonomous robot. While this morning you learned to interact with the controller of a robot, now you know how to give it eyes and muscles. Moreover while your familiarity with the use of functions is growing, reusing the work we did today will get easier and easier. The function <em>displayPositiveNumber(n)</em> made our work easier this afternoon to get a quick feedback from our sensors. All the work we did with the motor and the distance sensor this afternoon will make our work easier in the coming days. </p>
 <p>Talking about ease: this afternoon we dabbled in the world of electronics. This can be intimidating at first. But like most other domains, by repetitive explorations out of your confort zone, you make your confort zone wider and soon this field can be yours to play with. For now, time to rest and see you tomorrow for some more challenges !</p>
 <div class="footnote">
 <hr />
 <ol>
 <li id="fn:1">
 <p>While we use the potentiometer as a sensor it is essentially a voltage divider. Therefore we can use it to lower the voltage of the echo signal down. </p>
-<p>The way we used it as a sensor was to connect it with 3.3V and the ground, and it outputed a portion of 3.3V depending on the position of the knob, which is what we measured with the micro:bit. Instead, we can now feed it with the 0 to 5V echo signal coming from the HC-SR04, and make it output a portion of that, making sure it does not go over 3.3V. Also we need to take a large enough portion of the signal, for instance imagine we outputed 0% of the signal with the potentiometer, then we would not be able to understand when the echo is received on the micro:bit. To get it to work we need the high value of the signal to be 2.3 Volt minimum (2.3 = 0.7 * 3.3... see <a href="https://tech.microbit.org/hardware/edgeconnector/">here</a> for more information). Therefore if we put the knob at its mid position, it should output a signal oscillating in between 0 and 2.5V and it should work.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>The way we used it as a sensor was to connect it with 3.3V and the ground, and it outputed a portion of 3.3V depending on the position of the knob, which is what we measured with the micro:bit. Instead, we can now feed it with the 0 to 5V echo signal coming from the HC-SR04, and make it output a portion of that, making sure it does not go over 3.3V. Also we need to take a sufficiently large portion of the signal, for instance imagine we outputed 0% of the signal with the potentiometer, then we would not be able to understand when the echo is received on the micro:bit. To get it to work we need the high value of the signal to be 2.3 Volt minimum (2.3 = 0.7 * 3.3... see <a href="https://tech.microbit.org/hardware/edgeconnector/">here</a> for more information). Therefore if we put the knob at its mid position, it should output a signal oscillating in between 0 and 2.5V and it should work.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
