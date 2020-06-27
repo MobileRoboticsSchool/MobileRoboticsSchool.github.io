@@ -94,6 +94,12 @@
               
                 <h1 id="going-further">Going further</h1>
 <p>Hopefully the previous activities raised your curiosity, and you'll be confident in your ability to learn more in autonomy. If that's the case, here are ways you could follow to deepen your knowledge and practice in mobile robotics while still taking incremental steps.</p>
+<h2 id="programming">Programming</h2>
+<p>Combining knowledge about electronics and mechanics, we ended up building a mobile robot that can sense obstacles. Using this robot we could have solved much more complex problems than just moving forward when there is nothing in front and stop when there is something.</p>
+<div class="admonition note">
+<p class="admonition-title"><strong>Challenge</strong> : Program a robot to explore its environmet</p>
+<p>Develop your algorithm skills by solving more complex problem with the robot we built. For instance you could program it explore its environment randomly while avoiding obstacles.</p>
+</div>
 <h2 id="controllers">Controllers</h2>
 <table>
 <thead>
@@ -111,12 +117,12 @@
 </tr>
 </tbody>
 </table>
-<p>While we used the micro:bit this week, most of what you learned can be applied to other controllers. Among the popular options, you will often hear about the arduino and the raspberry pi which are great options to continue your exploration of mobile robotics. </p>
-<p>Using the arduino you could for instance more easily use a very wide variety of sensors thanks to all the libraries available for it. You will also have more easily access to the lower level architecture of the controller. One simple example is the use of interrupts which is very standard in mobile robotics but which is not available in python with the micro:bit.</p>
-<p>Raspberry pi is different. It has GPIO so that you can connect it to sensors and actuators... But it is a computer. So when you start it, it is not running a very basic program with a while true loop, it runs a whole operating system. It comes with great advantages like being able to use a camera, which is a really useful sensor for mobile robotics, but it comes at the cost of being much more complex to setup and harder to control its GPIO in real-time.</p>
+<p>While we used the micro:bit this week, most of what you learned can be applied to other controllers. Among the popular options, you will often hear about the Arduino and the Raspberry Pi which are great options to continue your exploration of mobile robotics. </p>
+<p>Using the Arduino you could for instance more easily use a very wide variety of sensors thanks to all the libraries available for it. You will also have more easily access to the lower level architecture of the controller. One simple example is the use of interrupts which is very standard in mobile robotics but which is not available in python with the micro:bit.</p>
+<p>Raspberry Pi is different. It has GPIO so that you can connect it to sensors and actuators but... it is a computer. So when you start it, it is not running a very basic program with a while true loop, it runs a whole operating system. It comes with great advantages like being able to use a camera, which is a really useful sensor for mobile robotics, but it comes at the cost of being much more complex to setup and harder to control its GPIO in real-time.</p>
 <div class="admonition note">
-<p class="admonition-title"><strong>Challenge</strong> : create an autonomous robot base on arduino</p>
-<p>Now that you know how to use servo motors, the HC-SR04 and how to design a robot frame, you can built a robot using arduino. The only thing you'll have to learn is to program in C++ and find a way to power the arduino (I'd recommand using a power bank).</p>
+<p class="admonition-title"><strong>Challenge</strong> : Create an autonomous robot based on Arduino</p>
+<p>Now that you know how to use servo motors, the HC-SR04 and how to design a robot frame, you can built a robot using Arduino. The only thing you'll have to learn is to program in C++ and find a way to power the arduino (I'd recommand using a power bank).</p>
 </div>
 <h2 id="sensors">Sensors</h2>
 <table>
@@ -140,7 +146,7 @@
 <div class="admonition note">
 <p><strong>Figure:</strong> Different distance sensors and an application</p>
 </div>
-<p>During this summerschool you interacted with different sensors: buttons, a potentiometer, the HC-SR04, the accelerometer, the radio receptor. This already covers quite a few types of sensors: active/passive, exteroceptive/proprioceptive (read more on this topic <a href="https://link.springer.com/chapter/10.1007/978-3-319-62533-1_2">here</a>). But those are just a few in so many different types of sensors. With micro:bit, as a distance sensor for instance, you could use a mechanical endstop (a bumper), or an infrared distance sensor, or a GP2Y0A60 or still a TOF10120! In doing so you'll learn not only different protocols to interface sensors but you can also learn the physics behind and link it to what you learn in school.  </p>
+<p>During this summer school you interacted with different sensors: buttons, a potentiometer, the HC-SR04, the accelerometer, the radio receptor. This already covers quite a few types of sensors: active/passive, exteroceptive/proprioceptive (read more on this topic <a href="https://link.springer.com/chapter/10.1007/978-3-319-62533-1_2">here</a>). But those are just a few in so many different types of sensors. With micro:bit, as a distance sensor for instance, you could use a mechanical endstop (a bumper), or an infrared distance sensor, or a GP2Y0A60 or still a TOF10120! In doing so you'll learn not only different protocols to interface sensors but you can also learn the physics behind and link it to what you learn in school.  </p>
 <div class="admonition note">
 <p class="admonition-title"><strong>Challenge</strong> : Using new sensors</p>
 <ul>
@@ -168,8 +174,8 @@
 <div class="admonition note">
 <p><strong>Figure:</strong> Different distance sensors and an application</p>
 </div>
-<p>In terms of actuators, you already managed to control LEDs, continuous servo motors and a radio emittor. While LEDs are relatively standard to start with, it is less the case for continuous servo motors. Indeed those are servo motors that have been modified (and <a href="https://learn.adafruit.com/adafruit-motor-selection-guide/continuous-rotation-servos">servo is actually a misnomer for them</a>). So if you wanted to expand your possibilities with robotics while staying in your confort zone, standard servos could be a great options. As their angle of rotation can be controlled, with them you can for instance build robotic arms.</p>
-<p>Some other options for motors could be to use DC motors or stepper motors. To use such motors you will usually need some extra electronics. For instance the L298N is a common in <a href="https://howtomechatronics.com/tutorials/arduino/arduino-dc-motor-control-tutorial-l298n-pwm-h-bridge/">arduino project involving DC motors</a>, but works equally well with micro:bit. The advantage of DC motors is that they can go really fast. For stepper motors you will usually need a stepper driver like the <a href="https://howtomechatronics.com/tutorials/arduino/how-to-control-stepper-motor-with-a4988-driver-and-arduino/">A4988</a> (note that the minimum operating voltage of the A4988 driver is usually written to be 8V but it can work with small stepper motor on 5V). The advantage of stepper drivers is that you can control their rotation precisely, step by step, hence their name.</p>
+<p>In terms of actuators, you already managed to control LEDs, continuous servo motors and a radio emitter. While LEDs are relatively standard to start with, it is less the case for continuous servo motors. Indeed those are servo motors that have been modified (and <a href="https://learn.adafruit.com/adafruit-motor-selection-guide/continuous-rotation-servos">servo is actually a misnomer for them</a>). So if you wanted to expand your possibilities with robotics while staying in your comfort zone, standard servos could be a great options. As their angle of rotation can be controlled, with them you can for instance build robotic arms.</p>
+<p>Some other options for motors could be to use DC motors or stepper motors. To use such motors you will usually need some extra electronics. For instance the L298N is a common in <a href="https://howtomechatronics.com/tutorials/arduino/arduino-dc-motor-control-tutorial-l298n-pwm-h-bridge/">Arduino project involving DC motors</a>, but works equally well with micro:bit. The advantage of DC motors is that they can go really fast. For stepper motors you will usually need a stepper driver like the <a href="https://howtomechatronics.com/tutorials/arduino/how-to-control-stepper-motor-with-a4988-driver-and-arduino/">A4988</a> (note that the minimum operating voltage of the A4988 driver is usually written to be 8V but it can work with small stepper motor on 5V). The advantage of stepper drivers is that you can control their rotation precisely, step by step, hence their name.</p>
 <p>While the use of extra electronics can seem intimidating at first, don't get fooled, thanks to modular electronics the process involves mostly skills and knowledge similar to the ones in computer science. Each module can be seen as a function and your goal is to use those functions appropriately (one difference with computer science though is that if you make a mistake you might have more than a bug... like burn your pieces).</p>
 <div class="admonition note">
 <p class="admonition-title"><strong>Challenge</strong> : Using new types of motors</p>
@@ -201,8 +207,8 @@
 <div class="admonition note">
 <p><strong>Figure:</strong> Different types of extension boards among many others and a project made possible with those.</p>
 </div>
-<p>To solve standard robotics problem (like building an avoiding obstacle robot), we saw that the buggy mainboard falls quickly short of pins. But this limitation is not due to the micro:bit, but to the extension board. The micro:bit as about 20 pins which can be used, and to use them you only need another extension board. However the buggy mainboard offers more than an easy access to the pins, it also offers a power supply.</p>
-<p>To tackle more complex robotics problem with micro:bit you will therefore need to find not only an extension board but also find a way to power it up if the battery does not come with the board which is often the case. If you don't want to get into soldering yet, then one option could be for you to use a board that give you access to many pins with pin headers but also that comes with either a battery or with a usb connector which will allow you to power the board using any standard power bank. If you want to get in soldering, then the world is yours.</p>
+<p>To solve standard robotics problems (like building an avoiding obstacle robot), we saw that the buggy mainboard falls quickly short of pins. This limitation is not due to the micro:bit, but to the extension board. The micro:bit has about 20 pins which can be used, and to use them you only need another extension board. However the buggy mainboard offers more than an easy access to the pins, it also offers a power supply.</p>
+<p>To tackle more complex robotics problems with micro:bit you will therefore need to find not only an extension board but also find a way to power it up if the battery does not come with the board which is often the case. If you don't want to get into soldering yet, then one option could be for you to use a board that gives you access to many pins with pin headers but also that comes with either a battery or with a usb connector which will allow you to power the board using any standard power bank. If you want to get in soldering, then the world is yours.</p>
 <div class="admonition note">
 <p class="admonition-title"><strong>Challenge</strong> : Use more pins of the micro:bit</p>
 <p>Find an extension board and adequate power supply to make an obstacle avoiding robot with the HC-SR04 and one micro:bit.</p>
@@ -227,7 +233,7 @@
 <div class="admonition note">
 <p><strong>Figure:</strong> Playing with wood, 3D printing and electronics</p>
 </div>
-<p>While you have made your first steps into prototyping with cardboard and designing with CAD, the possibilities to go further are endless with both. Search for "Cardboard robot" on youtube and you'll probably be amased at the creativity and the patience of some authors. As having the tools to work with other materials is not a chance everybody has, reproducing similar works is a great way for you to get confortable with the basics of mecanics and designing.</p>
+<p>While you have made your first steps into prototyping with cardboard and designing with CAD, the possibilities to go further are endless with both. Search for "Cardboard robot" on youtube and you'll probably be amased at the creativity and the patience of some authors. As having the tools to work with other materials is not a chance everybody has, reproducing similar works is a great way for you to get comfortable with the basics of mechanics and designing.</p>
 <p>Finally, a step further into CAD could be for you to design anything you can imagine, go on a website like <a href="https://www.instructables.com/workshop/laser-cutting/projects/">instructables</a> if you temporarily lack inspiration, and of course go into the closest fablab to learn how to handle laser cutter or 3D printers, and hopefully meet a community of people thirsty for learning. Although if you enjoy some quietness, 3D printers are getting very affordable those days and are now cheaper than most smartphones so you don't even need to go to a fablab.</p>
 <div class="admonition note">
 <p class="admonition-title"><strong>Challenge</strong> : Make</p>
