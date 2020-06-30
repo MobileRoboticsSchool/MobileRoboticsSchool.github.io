@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Robot - Mobile Robotics with micro:bit</title>
+  <title>Robotics and moving - Mobile Robotics with micro:bit</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -19,7 +19,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Robot";
+    var mkdocs_page_name = "Robotics and moving";
     var mkdocs_page_input_path = "robot.md";
     var mkdocs_page_url = null;
   </script>
@@ -52,10 +52,46 @@
                     <li class="toctree-l1"><a class="reference internal" href="..">Welcome</a>
                     </li>
                 </ul>
+                <p class="caption"><span class="caption-text">Preperation</span></p>
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="../python/">Introduction to Python</a>
                     </li>
                 </ul>
+                <p class="caption"><span class="caption-text">Monday</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../microbit/">Micro:bit board</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../gpio/">Inputs and outputs</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Tuesday</span></p>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Robotics and moving</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#what-you-will-need">What you will need</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#building-the-bitbuggy">Building the Bit:Buggy</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#moving-basics">Moving basics</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#control-systems">Control systems</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#open-loop-and-closed-loop-systems">Open-loop and closed-loop systems</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#onoff-clontrol-law-on-the-buggy">On/off clontrol law on the buggy</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#propotional-control-law-on-the-buggy">Propotional control law on the buggy</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#conclusion">Conclusion</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../radio/">Engineering and radio communication </a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">About</span></p>
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="../about/">Contacts</a>
                     </li>
@@ -80,8 +116,12 @@
     <li><a href="..">Docs</a> &raquo;</li>
     
       
+        
+          <li>Tuesday &raquo;</li>
+        
+      
     
-    <li>Robot</li>
+    <li>Robotics and moving</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -141,7 +181,7 @@
 <ul>
 <li>1.1 Program micro:bit to move forward when the button A is pressed and stop when B is pressed.</li>
 <li>1.2 Rewrite your program to make it clean and reusable: define the functions <em>setLeftSpeed(v)</em> and <em>setRightSpeed(v)</em> for <em>v</em> in [-100, 100] so that to go straight at full speed we just have to call <em>setLeftSpeed(100)</em> and <em>setRightSpeed(100)</em>.</li>
-<li>1.4 Change the functions <em>setLeftSpeed()</em> and <em>setRightSpeed()</em> so that <em>setLeftSpeed(v)</em> does the same thing as <em>setLeftSpeed(100)</em> for <em>v&gt;100</em> and <em>setLeftSpeed(-100)</em> for <em>v&lt;-100</em>.</li>
+<li>1.3 Change the functions <em>setLeftSpeed()</em> and <em>setRightSpeed()</em> so that <em>setLeftSpeed(v)</em> does the same thing as <em>setLeftSpeed(100)</em> for <em>v&gt;100</em> and <em>setLeftSpeed(-100)</em> for <em>v&lt;-100</em>.</li>
 <li>1.4 Rewrite your program to make it even cleaner and reusable: define a function <em>goStraight(v)</em> that can be used to make the robot move forward (<em>v &gt; 0</em>) or backward (<em>v &lt; 0</em>) at the speed you want.</li>
 </ul>
 </div>
@@ -224,6 +264,15 @@
           </div>
           <footer>
   
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../radio/" class="btn btn-neutral float-right" title="Engineering and radio communication ">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../gpio/" class="btn btn-neutral" title="Inputs and outputs"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
 
   <hr/>
 
@@ -246,6 +295,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
+        <span><a href="../gpio/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../radio/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
