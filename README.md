@@ -1,2 +1,3 @@
 # MobileRoboticsSchool.github.io
-Ressources for the EPFL mobile robotics summer school
+
+Ressources to support the students through the mobile robotics school with micro:bit. See the index and contact pages to know more.
