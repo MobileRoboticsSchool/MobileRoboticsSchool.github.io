@@ -256,7 +256,7 @@ This montage is more complex than the previous ones and here is the reason why: 
 <p><strong>Figure:</strong> Using the HC-SR04 with the micro:bit: set the potentiometer to its mid-position, do the wiring. </p>
 </div>
 <p>One way to use the HC-SR04 in our program is to use the following function:</p>
-<pre><code class="py">from microbit import *
+<pre><code class="language-py">from microbit import *
 import machine
 import utime
 
@@ -279,7 +279,6 @@ def get_dist_in_cm():
     else:# timeout returns -1   
         return d
 </code></pre>
-
 <div class="admonition note">
 <p class="admonition-title">exercise 3</p>
 <ul>
@@ -297,7 +296,7 @@ def get_dist_in_cm():
 <p>If you finish the exercises in advance or if you are not tired enough and you want to learn more, one more thing you could do is to use the special extension board of the buggy, and learn to control it. </p>
 <p><strong>Warning:</strong> Before doing this activity <strong>remove the batteries</strong> from the buggy mainboard. Indeed, you will use the potentiometer as a sensor. If you kept the batteries it could provide, depending on the knob position, a voltage going from 0 to 5 Volts to the micro:bit. And as we learned previously 5V is likely to burn the micro:bit. By removing the batteries, the voltage will be in between 0 and 3.3V which is perfect.</p>
 <p>The special extension board of the buggy comes with 2 neopixel LEDs which can be controlled thanks to the neopixel library. For instance, if the board is plugged on pin0, a simple program to light up one LED in green and one in blue would be the following:</p>
-<pre><code class="py">from microbit import *
+<pre><code class="language-py">from microbit import *
 import neopixel
 
 np = neopixel.NeoPixel(pin0, 2)
@@ -305,7 +304,6 @@ np[0] = (0, 255, 0)
 np[1] = (0, 0, 255)
 np.show()
 </code></pre>
-
 <div class="admonition note">
 <p class="admonition-title">exercise 4</p>
 <p>Connect the neopixel and the potentiometer to the micro.bit. Program the micro:bit to change the colors of the LEDs with the sensors at your disposition, making it as user friendly as possible.</p>
