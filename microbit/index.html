@@ -159,7 +159,7 @@
 <h2 id="microbit-specific-functions">Micro:bit specific functions</h2>
 <p>The <strong>structure</strong> of a program on a microcontroller is and will almost always be as follows: first, an <strong>initialisation</strong>, then a <strong>loop</strong>. Take the time to identify those two parts in the previous program.</p>
 <p>Here is another program to show you some specific micro:bit functions that are available to use its buttons (<em>button_a.was_pressed()</em>) and its LED matrix (<em>display.set_pixel()</em> and <em>display.clear()</em>):</p>
-<pre><code class="py"># Initialisation
+<pre><code class="language-py"># Initialisation
 # Get standard librairies
 from microbit import *
 
@@ -175,7 +175,6 @@ while True:
         display.clear()
     sleep(100)
 </code></pre>
-
 <div class="admonition note">
 <p class="admonition-title">Exercise 1</p>
 <ul>
@@ -239,12 +238,11 @@ while True:
 </tbody>
 </table>
 <p>If we plug some sensors to the micro:bit and we want to display some quantitative information coming from them, <em>displayPositiveNumber(n)</em> is exactly the sort of function we need. However, for now, our resolution is very little (only 6 possible values can be displayed). To get a richer feedback, let's use the whole LED matrix. For this you'll modify the previous function slightly:</p>
-<pre><code class="py">def displayPositiveNumber(d):
+<pre><code class="language-py">def displayPositiveNumber(d):
     display.clear()
     for i in range(d):
         display.set_pixel(i%5,int(i/5),9)
 </code></pre>
-
 <div class="admonition note">
 <p class="admonition-title">Exercise 3</p>
 <ul>
