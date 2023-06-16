@@ -7,7 +7,7 @@ def printHelloWorld():
 def div(a,b):
   return a/b
 
-# splitStringAtComma: input = 1 string; output = list of strigns
+# splitStringAtComma: input = 1 string; output = list of strings
 def splitStringAtComma(s):
   return s.split(",")
 
@@ -21,7 +21,8 @@ def fibonacci(n):
     x_nm1 = x_n
   return x_nm1
 
-# those were only the definitions of the functions. Now that they are defined we can use them as such:
+# those were only the definitions of the functions. Now that 
+# they are defined we can use them as such:
 printHelloWorld()
 f = div(1,4)
 l = splitStringAtComma("str1,str2")

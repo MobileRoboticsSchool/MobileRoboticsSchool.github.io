@@ -94,21 +94,141 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="introduction-to-python">Introduction to Python</h1>
-<p>During the upcoming robotics summer school, I'll need you to be confortable with the basics of python programming. I wrote this page using embedded codes to have everyone starting with the bare minimum going from a simple "Hello world" script to using variables, loops, conditions and functions. As the program of the summer school will be intense, I'll need you to be confortable with those.</p>
+<p>During the upcoming robotics summer school, I'll need you to be confortable with the basics of python programming. You'llbe able to do so without leaving your browser. It is written so that everyone can start with the bare minimum, going from a simple "Hello world" script to using variables, loops, conditions and functions. As the program of the summer school will be intense, I'll need you to be confortable with those.</p>
 <h2 id="comments-and-simple-instructions">Comments and simple instructions</h2>
-<p>For each section of this page I'll use embedded code that allow you to run python scripts without leaving this page, and interact with the code as you wish. So let's go: read the code, try to predict what's going to happen in the terminal (in black), and press the play button.</p>
-<iframe height="800px" width="100%" src="https://repl.it/@amauryd/MobileRoboticsSummerschool1Hello?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<p>For each section of this page a python script is given, that you'll need to copy paste in your favorite python interpreter for you to test it and sometimes modify it. Don't hesitate to test more than what is proposed. So let's go ! Start reading the following code.Can you predict what result it will give ?</p>
+<pre><code class="language-py"># First, lines beginning with a Hashtag are comments. 
+# Those are very practical to make python code understandable and share it. 
+# That will be very useful for me now as you can imagine.
 
-<p>Again, don't hesitate to change the code and press play again to try things out, anything ! For that you can also directly type instructions in the terminal (the black window).</p>
+# So what can we do in python ? 
+# Like in other langages, we can give instruction. 
+# Let's start with the standard:
+print(&quot;Hello world&quot;)
+</code></pre>
+<p>If you do not know any interpreter, I recommend <a href="https://www.tutorialspoint.com/online_python_compiler.php">tutorialspoint</a>. Using to the interpreter, let's check if you guessed correctly. Again, don't hesitate to change the code and execute it again to try things out and see if you got it !</p>
 <h2 id="variables-and-standard-operations">Variables and standard operations</h2>
 <p>Computers are so useful to us because they don't always do the same things over and over. It's the same with mobile robots, they can adapt to their environment. This would be impossible to do without taking into account some variations in our programs. To deal with those variations, we use what we call variables. A variable is like a box where we put some information that can vary during the execution of a program.</p>
-<iframe height="800px" width="100%" src="https://repl.it/@amauryd/MobileRoboticsSummerschool2Variables?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<pre><code class="language-py"># A variable has a name. Lets call it x like you probably 
+# often do in mathematics. To give x a value, it's simple, 
+# just make it equal to something:
 
+print(&quot;Assignement&quot;)
+x = 0
+
+# Now let's check what's inside x with the print function 
+# that we used in the previous section:
+
+print(&quot;x =&quot;)
+print(x)
+
+# actually let's make this a bit more tidy and enjoy the 
+# capability of print to take several arguments
+
+print(&quot;x = &quot;,x)
+
+# There exist different types of variables. During the 
+# summerschool we'll use mostly integers (numbers), 
+# floats(decimal numbers), strings (text), booleans (True of False) 
+# and lists (lists...)
+
+print(&quot;\nTypes&quot;)# \n = end of line
+myInt = 2020
+myFloat = 3.14
+myString = &quot;Hello world&quot;
+myBoolean = True
+myList = [&quot;Kate&quot;,&quot;Joe&quot;, &quot;Ben&quot;, &quot;Shanka&quot;]
+
+print(myInt)
+print(myFloat)
+print(myString)
+print(myBoolean)
+print(myList)
+
+# Each type comes with it's operations. As you could expect if 
+# I add two numbers and if I add two strings, the process will 
+# be very different. Let's try it out:
+
+print(&quot;\nOperations&quot;)
+print(myInt + 1)
+print(myFloat / 2)
+print(myString + &quot; !!!&quot;)
+print(not(myBoolean))
+print(myList[3])
+
+# Note that you can use the value stored in a variable to 
+# assign another variable. And then you can end up with things 
+# a bit strange at first but super useful such as this:
+
+print(&quot;\nOperations2&quot;)
+print(x)
+x = x + 1
+print(x)
+
+# One last thing. Can we add strings and integers ? 
+# What do you think ?
+
+print(&quot;\nOperations3&quot;)
+myString = &quot;Year:&quot; + 2000
+print(&quot;myString&quot;)
+
+# This does not work and that is great ! 
+# Indeed adding a string and an integer is ambiguou. 
+# What do we want out of that is unclear. 
+# Do we want 2000 to be converted to a string and concatenated 
+# to &quot;Year&quot;, or do we want &quot;Year&quot; to be converted in ascii and 
+# added to 2000. The computer is not supposed to know and does 
+# not take the decision for us which is great. Instead he gives 
+# an error where it explains us why he has a problem with what we 
+# wrote. Pay attention to those errors and try to understand them, 
+# that's the best way to become independant and open yourself the 
+# world of computer science (and a big part of robotics).
+</code></pre>
 <p>Same here, change the code, make it crash ! (Even more than it already does !)</p>
 <h2 id="loops">Loops</h2>
 <p>Another way computers and robots change our lives is in their ability to cope with repetitive tasks without being bored. But the programmer who programmed them gets easily bored, so he needs to have a tool to take care of repetitions in his code. That's what loops are for.</p>
-<iframe height="800px" width="100%" src="https://repl.it/@amauryd/MobileRoboticsSummerschool3Loops?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<pre><code class="language-py"># Imagine I want to increment a variable x from 0 to 5 
+# and show it's value changing. I could write:
+print(&quot;No loop&quot;)
+x = 0
+x = x + 1
+print(&quot;x = &quot;, x)
+x = x + 1
+print(&quot;x = &quot;, x)
+x = x + 1
+print(&quot;x = &quot;, x)
+x = x + 1
+print(&quot;x = &quot;, x)
+x = x + 1
+print(&quot;x = &quot;, x)
 
+# But that is highly unreadable and unpractical. 
+# Therefore python and most other programming langage use 
+# loops. In python we'll use the for loop:
+
+print(&quot;\nFor loop&quot;)
+x = 0
+for i in range(5):
+  x = x + 1
+  print(&quot;x = &quot;, x)
+
+# Note that the two previous bits of code give the same output. 
+# At first it can be fine to understand &quot;for i in range(5):...&quot; 
+# as &quot;repeat 5 times...&quot;, although it means a bit more than that.
+
+# Another thing to notice here is the use of indentations in python: 
+#the lines 21 and 22 start with a tabulation, it means that the two 
+# form a block, and this whole block will be repeated by the for 
+# loop in line 20.
+
+# Repetitions can also be handled by While loops. Which leads us 
+# to a third way to do the same thing: 
+print(&quot;\nWhile loop&quot;)
+x = 0
+while x &lt; 5:
+  x = x + 1
+  print(&quot;x = &quot;, x)
+</code></pre>
 <div class="admonition note">
 <p class="admonition-title">Exercice 1</p>
 <p>Add some lines in the script above to display the 20 first numbers of the Fibonacci sequence.</p>
@@ -121,8 +241,40 @@
 <p>Do you know what assembly language is ? Take a few seconds to have a look at it on wikipedia and try to decipher what the program in the top right image does... That's not the language you want to program every day ! Take some time to contemplate the chance you have to not go through that and instead use python.</p>
 <p>Well, you have this chance partly thanks to functions. As in mathematics, functions can take arguments and return a value. You should have all by now used the cosine function. Cosine takes onoe parameter, an angle, and returns a value in between -1 and 1. In computer science, functions come in many forms. They can take argument(s) or not. They can return values but they don't have to (in this case we could call it a procedure). </p>
 <p>Such a tool allow to make our code readable, less repetitive, and combine and build functions with and on one another. That's how, thanks to programmers, your computer can understand some high level languages like python, while at its core it can only understand assembly. Let's see how to use this incredible tool in python. </p>
-<iframe height="800px" width="100%" src="https://repl.it/@amauryd/MobileRoboticsSummerschool4functions?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<pre><code class="language-py"># Here are a few examples of function declarations (definition)
+# printHelloWorld: no arguments, no output
+def printHelloWorld():
+  print(&quot;Hello world&quot;)
 
+# div: input = 2 integers; output = 1 float
+def div(a,b):
+  return a/b
+
+# splitStringAtComma: input = 1 string; output = list of strings
+def splitStringAtComma(s):
+  return s.split(&quot;,&quot;)
+
+# fibonacci: input = 1 iinteger; output = 1 integer
+def fibonacci(n):
+  x_nm1 = 0
+  x_nm2 = 1
+  for i in range(n):
+    x_n = x_nm1 + x_nm2
+    x_nm2 = x_nm1
+    x_nm1 = x_n
+  return x_nm1
+
+# those were only the definitions of the functions. Now that 
+# they are defined we can use them as such:
+printHelloWorld()
+f = div(1,4)
+l = splitStringAtComma(&quot;str1,str2&quot;)
+r = fibonacci(10)
+
+print(f)
+print(l)
+print(r)
+</code></pre>
 <div class="admonition note">
 <p class="admonition-title">Exercice 2</p>
 <p>Define a function with one parameter <em>n</em> that computes and returns the golden ratio using the fibonacci <em>n</em>th and <em>n+1</em>th numbers.</p>
@@ -138,14 +290,55 @@ See how simple the exercise is if we use the predefined fibonacci function. The 
 <p class="admonition-title">Exercice 3</p>
 <p>Modify the code following the instructions inside it.</p>
 </div>
-<iframe height="800px" width="100%" src="https://repl.it/@amauryd/MobileRoboticsSummerschool5conditions?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+<pre><code class="language-py"># fibonacci: input = 1 iinteger; output = 1 integer
+def fibonacci(n):
+  x_nm1 = 0
+  x_nm2 = 1
+  for i in range(n):
+    x_n = x_nm1 + x_nm2
+    x_nm2 = x_nm1
+    x_nm1 = x_n
+  return x_nm1
 
+# I'll take this opportunity to show you one more little 
+# instruction: input. When you use input, the user is asked 
+# to type something in the terminal which is returned to the 
+# program,  allowing to make the code interactive.
+
+while True:
+  s = input('Which Fibonacci number do you want? ')
+  # as input returns a string and we want a number
+  # we convert if to integer
+  n = int(s)
+  # print the result
+  print(&quot;Fibonacci(&quot;,n,&quot;) = &quot;,fibonacci(n),&quot;\n&quot;)
+
+# Try it out and try to understand what is going on. One problem 
+# you will find (especially if you try to make things crash as I 
+# asked you to do) is that if someone types something like &quot;not 
+# a number&quot; as an input, the code will crash. Indeed the function 
+# int() does not accept to convert non digits. 
+# To prevent this we can use a condition and check if our string 
+# is made of digits such as:
+
+if s.isdigit():# s.isdigit() returns either True or False
+  print(&quot;s is a positive nunmber&quot;)
+  # dosomethingmore
+else:
+  print(&quot;s is not a positive nunmber&quot;)
+  # dosomethingmore
+
+# (Note that this piece of code will never be executed because 
+# if comes after a While True: loop)
+# Try to add such a condition inside the while loop to remind 
+# the user to put numbers if he's not doing so.
+</code></pre>
 <details class="note">
 <summary>Solution exercice 3</summary>
 <p><img alt="ConditionFig" src="Condition.png" /></p>
 </details>
 <h2 id="conclusion">Conclusion</h2>
-<p>That's all for now. Thanks for going through this introduction and I see you soon to use those new skills to discover the world of mobile robotics.</p>
+<p>That's all for now. You have an overall idea of the tools we'll build on during the week. If you want to enjoy having the time to think about the robotics concepts and play with them, I recommend you not only to not only to have read and understood those basics, but to really be familiar with them. For this exercising is the way. For that there are many useful websites available. My favorite is <a href="https://www.geeksforgeeks.org/python-exercises-practice-questions-and-solutions/">GeeksForGeeks</a>. Thank you for reading up to this point and see you soon to discover the world of mobile robotics. </p>
               
             </div>
           </div><footer>
