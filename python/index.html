@@ -1,60 +1,53 @@
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  
-  
-  <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Introduction to Python - Mobile Robotics with micro:bit</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
-
-  <link rel="stylesheet" href="../css/theme.css" />
-  <link rel="stylesheet" href="../css/theme_extra.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
-  <link href="../css/extra.css" rel="stylesheet" />
-  
-  <script>
-    // Current page data
-    var mkdocs_page_name = "Introduction to Python";
-    var mkdocs_page_input_path = "python.md";
-    var mkdocs_page_url = null;
-  </script>
-  
-  <script src="../js/jquery-2.1.1.min.js" defer></script>
-  <script src="../js/modernizr-2.8.3.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script> 
-  
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Introduction to Python - Mobile Robotics with micro:bit</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="../css/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Introduction to Python";
+        var mkdocs_page_input_path = "python.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
 </head>
 
 <body class="wy-body-for-nav" role="document">
 
   <div class="wy-grid-for-nav">
-
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
-        <a href=".." class="icon icon-home"> Mobile Robotics with micro:bit</a>
-        <div role="search">
+          <a href=".." class="icon icon-home"> Mobile Robotics with micro:bit
+        </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="..">Welcome</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">Preperation</span></p>
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Introduction to Python</a>
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Welcome</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Preperation</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Introduction to Python</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#comments-and-simple-instructions">Comments and simple instructions</a>
     </li>
@@ -69,74 +62,36 @@
     <li class="toctree-l2"><a class="reference internal" href="#conclusion">Conclusion</a>
     </li>
     </ul>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">Monday</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../microbit/">Micro:bit board</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../gpio/">Inputs and outputs</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">Tuesday</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../robot/">Robotics and moving</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../radio/">Engineering and radio communication </a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">Wednesday</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../cardbot/">Designing and building</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../cad/">CAD</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">Thursday</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../further/">Going further</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">About</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../about/">Contacts</a>
-                    </li>
-                </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">About</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../about/">Contacts</a>
+                  </li>
+              </ul>
       </div>
     </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="..">Mobile Robotics with micro:bit</a>
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Mobile Robotics with micro:bit</a>
+        
       </nav>
-
-      
       <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="..">Docs</a> &raquo;</li>
-    
-      
-        
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
           <li>Preperation &raquo;</li>
-        
-      
-    
-    <li>Introduction to Python</li>
+      <li>Introduction to Python</li>
     <li class="wy-breadcrumbs-aside">
-      
     </li>
   </ul>
-  
   <hr/>
 </div>
-          <div role="main">
-            <div class="section">
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
               
                 <h1 id="introduction-to-python">Introduction to Python</h1>
 <p>During the upcoming robotics summer school, I'll need you to be confortable with the basics of python programming. I wrote this page using embedded codes to have everyone starting with the bare minimum going from a simple "Hello world" script to using variables, loops, conditions and functions. As the program of the summer school will be intense, I'll need you to be confortable with those.</p>
@@ -158,7 +113,9 @@
 <p class="admonition-title">Exercice 1</p>
 <p>Add some lines in the script above to display the 20 first numbers of the Fibonacci sequence.</p>
 </div>
-<details class="note"><summary>Solution exercice 1</summary><p><img alt="Fibonacci" src="Fibonacci.png" /></p>
+<details class="note">
+<summary>Solution exercice 1</summary>
+<p><img alt="Fibonacci" src="Fibonacci.png" /></p>
 </details>
 <h2 id="functions">Functions</h2>
 <p>Do you know what assembly language is ? Take a few seconds to have a look at it on wikipedia and try to decipher what the program in the top right image does... That's not the language you want to program every day ! Take some time to contemplate the chance you have to not go through that and instead use python.</p>
@@ -170,7 +127,9 @@
 <p class="admonition-title">Exercice 2</p>
 <p>Define a function with one parameter <em>n</em> that computes and returns the golden ratio using the fibonacci <em>n</em>th and <em>n+1</em>th numbers.</p>
 </div>
-<details class="note"><summary>Solution exercice 2</summary><p><img alt="GoldenRationSol" src="GoldenRatio.png" />
+<details class="note">
+<summary>Solution exercice 2</summary>
+<p><img alt="GoldenRationSol" src="GoldenRatio.png" />
 See how simple the exercise is if we use the predefined fibonacci function. The exercise would have been much harder if we had to start from scratch. </p>
 </details>
 <h2 id="conditions">Conditions</h2>
@@ -181,35 +140,29 @@ See how simple the exercise is if we use the predefined fibonacci function. The 
 </div>
 <iframe height="800px" width="100%" src="https://repl.it/@amauryd/MobileRoboticsSummerschool5conditions?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
-<details class="note"><summary>Solution exercice 3</summary><p><img alt="ConditionFig" src="Condition.png" /></p>
+<details class="note">
+<summary>Solution exercice 3</summary>
+<p><img alt="ConditionFig" src="Condition.png" /></p>
 </details>
 <h2 id="conclusion">Conclusion</h2>
 <p>That's all for now. Thanks for going through this introduction and I see you soon to use those new skills to discover the world of mobile robotics.</p>
               
             </div>
-          </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../microbit/" class="btn btn-neutral float-right" title="Micro:bit board">Next <span class="icon icon-circle-arrow-right"></span></a>
-      
-      
-        <a href=".." class="btn btn-neutral" title="Welcome"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-      
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href=".." class="btn btn-neutral float-left" title="Welcome"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../about/" class="btn btn-neutral float-right" title="Contacts">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <!-- Copyright etc -->
-    
   </div>
 
-  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
-      
+          
         </div>
       </div>
 
@@ -217,18 +170,19 @@ See how simple the exercise is if we use the predefined fibonacci function. The 
 
   </div>
 
-  <div class="rst-versions" role="note" aria-label="versions">
-    <span class="rst-current-version" data-toggle="rst-current-version">
-      
-      
-        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
-      
-      
-        <span style="margin-left: 15px"><a href="../microbit/" style="color: #fcfcfc">Next &raquo;</a></span>
-      
-    </span>
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../about/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
 </div>
     <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
     <script src="../js/theme.js" defer></script>
       <script src="../search/main.js" defer></script>
     <script defer>
